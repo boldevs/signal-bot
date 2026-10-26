@@ -1,0 +1,85 @@
+# signal-bot.yml - Runs the bot on GitHub's computers every 5 minutes (15m day-trading signals).
+#
+# One job, one command: `python -m bot run` checks crypto (detect + notify) AND gold / forex (fx.check).
+# Claude Code is installed every run (cached, so it is quick): gold / forex may need it, and
+# that is only known inside the run. Claude is still only CALLED when there is something to judge.
+# Last step saves the bot's memory (state.json, history.json) back into the repo.
+#
+# Secrets needed (repo -> Settings -> Secrets and variables -> Actions):
+#   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, CLAUDE_CODE_OAUTH_TOKEN, TWELVEDATA_API_KEY
+# Never add ANTHROPIC_API_KEY here: that would bill the paid API.
+
+name: Crypto Signal Bot
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"    # every 5 minutes (GitHub may start it a few minutes late)
+  workflow_dispatch:          # lets you press "Run workflow" by hand to test
+
+permissions:
+  contents: write             # needed to save state.json / history.json
+
+concurrency:
+  group: signal-bot           # never run two copies at the same time (a late run waits, none overlap)
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Week number (Claude Code cache is refreshed weekly)
+        id: week
+        run: echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore Claude Code
+        id: claude-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/bin/claude
+            ~/.local/share/claude
+          key: claude-code-${{ runner.os }}-${{ steps.week.outputs.week }}
+
+      - name: Install Claude Code (only when not cached)
+        if: steps.claude-cache.outputs.cache-hit != 'true'
+        run: curl -fsSL https://claude.ai/install.sh | bash
+
+      - name: Put Claude Code on the PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Crypto + gold/forex - prices, news, Claude, Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+        run: python -m bot run
+
+      - name: Save memory
+        if: ${{ !cancelled() }}   # also after a failed check: what was sent must not be sent again
+        run: |
+          git config user.name "signal-bot"
+          git config user.email "signal-bot@users.noreply.github.com"
+          [ ! -f state.json ] || git add state.json
+          [ ! -f history.json ] || git add history.json
+          if git diff --cached --quiet; then
+            echo "No changes to save"
+          else
+            git commit -m "Update bot memory"
+            git pull --rebase
+            git push
+          fi

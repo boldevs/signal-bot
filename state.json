@@ -74,11 +74,13 @@
   "last_fx_daily_date": "2026-10-26",
   "last_summary_date": "2026-10-26",
   "seen_events": [
-    "923e9984078f"
+    "923e9984078f",
+    "c93d41de1ccb"
   ],
   "seen_macro": [
     "32b30b97224b",
-    "4d4753fe78ff"
+    "4d4753fe78ff",
+    "08a73fe544ff"
   ],
   "tg_offset": null
 }

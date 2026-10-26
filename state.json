@@ -1,0 +1,84 @@
+{
+  "fx_calendar": {
+    "checked_at": "2026-10-26T15:30:56.353345+00:00",
+    "events": [
+      {
+        "currency": "GBP",
+        "time": "2026-10-28T12:30:00+00:00",
+        "title": "Annual Budget Release"
+      },
+      {
+        "currency": "USD",
+        "time": "2026-10-28T18:00:00+00:00",
+        "title": "Federal Funds Rate"
+      },
+      {
+        "currency": "USD",
+        "time": "2026-10-28T18:00:00+00:00",
+        "title": "FOMC Statement"
+      },
+      {
+        "currency": "USD",
+        "time": "2026-10-28T18:30:00+00:00",
+        "title": "FOMC Press Conference"
+      },
+      {
+        "currency": "USD",
+        "time": "2026-10-29T12:30:00+00:00",
+        "title": "Advance GDP q/q"
+      },
+      {
+        "currency": "USD",
+        "time": "2026-10-29T12:30:00+00:00",
+        "title": "Core PCE Price Index m/m"
+      },
+      {
+        "currency": "EUR",
+        "time": "2026-10-29T13:15:00+00:00",
+        "title": "Main Refinancing Rate"
+      },
+      {
+        "currency": "EUR",
+        "time": "2026-10-29T13:15:00+00:00",
+        "title": "Monetary Policy Statement"
+      },
+      {
+        "currency": "EUR",
+        "time": "2026-10-29T13:45:00+00:00",
+        "title": "ECB Press Conference"
+      },
+      {
+        "currency": "JPY",
+        "time": "2026-10-30T02:30:00+00:00",
+        "title": "BOJ Policy Rate"
+      },
+      {
+        "currency": "JPY",
+        "time": "2026-10-30T02:30:00+00:00",
+        "title": "Monetary Policy Statement"
+      },
+      {
+        "currency": "JPY",
+        "time": "2026-10-30T02:31:00+00:00",
+        "title": "BOJ Outlook Report"
+      },
+      {
+        "currency": "JPY",
+        "time": "2026-10-30T05:30:00+00:00",
+        "title": "BOJ Press Conference"
+      }
+    ],
+    "ok": true
+  },
+  "last_alert": {},
+  "last_fx_daily_date": "2026-10-26",
+  "last_summary_date": "2026-10-26",
+  "seen_events": [
+    "923e9984078f"
+  ],
+  "seen_macro": [
+    "32b30b97224b",
+    "4d4753fe78ff"
+  ],
+  "tg_offset": null
+}

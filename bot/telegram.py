@@ -86,6 +86,20 @@ def analysed_line(now=None):
 CONFIDENCE_ICONS = {"HIGH": "💎", "MEDIUM": "🔸"}
 
 
+TF_MINUTES = {"15m": 15, "30m": 30, "1h": 60}
+
+
+def time_line(sig, tf, now=None):
+    """'🕒 Analysed 27 Oct 2026 21:20 (UTC+7) · candle closed 21:15': when the bot looked, and the
+    closed candle the signal comes from (runs are every few minutes, so the alert is not live)."""
+    line = analysed_line(now)
+    try:
+        closed = datetime.fromisoformat(sig["candle_time"]) + timedelta(minutes=TF_MINUTES[tf])
+    except (KeyError, TypeError, ValueError):  # no usable candle time: show the analysis time only
+        return line
+    return line + f" · candle closed {closed.astimezone(timezone(timedelta(hours=C.LOCAL_UTC_OFFSET_HOURS))):%H:%M}"
+
+
 def why_line(news, fallback):
     """One short reason: Claude's view when it gave one, else the news reason."""
     return f"💬 <i>{html.escape(short_text(news.get('why') or fallback, 120))}</i>"
@@ -105,6 +119,7 @@ def format_signal(coin_name, sig, news, plans=None, also=None, confidence=None):
     lines = [
         f"{ICONS[side]} <b>{side} SIGNAL: {e(coin_name)}</b> · {C.TIMEFRAME}",
         f"{conf}Trend {sig['trend']} · RSI {sig['rsi']:.0f}",
+        time_line(sig, C.TIMEFRAME),
         "",
         f"📍 Entry   <b>{fmt_price(price)}</b>" + (f" (better {fmt_price(better)})" if better else ""),
         f"🛑 Stop    <b>{fmt_price(sig['stop'])}</b>  -{pct_from(price, sig['stop']):.1f}%",
@@ -116,8 +131,8 @@ def format_signal(coin_name, sig, news, plans=None, also=None, confidence=None):
     ]
     if plans:
         lines += ["", format_plans(plans)]
-    lines += ["", f"⏳ {C.EXPIRE_HOURS_BY_TF.get(C.TIMEFRAME, C.RESULT_EXPIRE_HOURS)}h · {analysed_line()}",
-              "<i>Not financial advice.</i>"]
+    lines += ["", f"⏳ Expires after {C.EXPIRE_HOURS_BY_TF.get(C.TIMEFRAME, C.RESULT_EXPIRE_HOURS)}h · "
+                  "<i>Not financial advice.</i>"]
     return "\n".join(lines)
 
 
@@ -251,6 +266,7 @@ def format_fx_signal(pair, sig, news, confidence, plans=None, now=None):
         f"{ICONS[side]} <b>{side} SIGNAL: {e(pair['name'])}</b> · {C.FX_TIMEFRAME}",
         f"{CONFIDENCE_ICONS[confidence]} Confidence <b>{confidence}</b> · {sig['trend_tf']} trend {sig['trend']} "
         f"· RSI {sig['rsi']:.0f}",
+        time_line(sig, C.FX_TIMEFRAME, now),
         "",
         f"📍 Entry   <b>{fmt_level(price, d)}</b>",
         f"🛑 Stop    <b>{fmt_level(sig['stop'], d)}</b>  -{pct_from(price, sig['stop']):.2f}%",
@@ -261,7 +277,7 @@ def format_fx_signal(pair, sig, news, confidence, plans=None, now=None):
     ]
     if plans:
         lines += ["", format_plans(plans, d)]
-    lines += ["", f"⏳ expires after {C.FX_EXPIRE_HOURS}h · {analysed_line(now)}", "<i>Not financial advice.</i>"]
+    lines += ["", f"⏳ expires after {C.FX_EXPIRE_HOURS}h · <i>Not financial advice.</i>"]
     return "\n".join(lines)
 
 

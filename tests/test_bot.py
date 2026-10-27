@@ -215,6 +215,8 @@ def test_format_signal_message():
     assert "DISAGREES" in text
     assert "&lt;hack&gt; &amp;" in text  # special characters escaped for Telegram HTML
     assert "🕒 Analysed" in text
+    sig["candle_time"] = "2026-10-26T07:00:00+00:00"
+    assert "candle closed 14:15" in telegram.format_signal("BTC", sig, news_v)  # 15m candle, UTC+7
 
 
 def test_analysed_line_uses_local_time():

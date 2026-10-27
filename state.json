@@ -72,7 +72,7 @@
   },
   "last_alert": {},
   "last_fx_daily_date": "2026-10-27",
-  "last_summary_date": "2026-10-26",
+  "last_summary_date": "2026-10-27",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb"
@@ -82,7 +82,8 @@
     "4d4753fe78ff",
     "08a73fe544ff",
     "9692386902c5",
-    "26c9ca0e193f"
+    "26c9ca0e193f",
+    "9d4001345bde"
   ],
   "tg_offset": null
 }

@@ -1,4 +1,4 @@
-# Loads .env and runs the bot (price check every 10 minutes, /stats answered at once). Stop with Ctrl+C.
+# Loads .env and runs the bot (crypto + gold/forex every 5 minutes, /stats answered at once). Stop with Ctrl+C.
 Set-Location $PSScriptRoot
 
 Get-Content .env | ForEach-Object {
@@ -9,5 +9,5 @@ Get-Content .env | ForEach-Object {
     }
 }
 
-# watch = checks every 10 minutes and answers /stats within seconds
-python -m bot watch
+# loop = crypto + gold/forex every 5 minutes, answers /stats and buttons within seconds
+python -m bot loop

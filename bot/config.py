@@ -171,6 +171,7 @@ RESULT_EXPIRE_HOURS = 6      # 1h candles: a signal that hits neither level in t
 EXPIRE_HOURS_BY_TF = {"15m": 4, "30m": 3}  # 15m = 4h day trade, 30m = shorter wait (1h uses the line above)
 CHECK_EVERY_MIN = 10         # laptop mode (`python -m bot watch`): minutes between price checks
 LOOP_EVERY_MIN = 5           # `python -m bot loop` (crypto + gold/forex): minutes between checks
+                             # `loop --for-min=330` stops after 330 min (GitHub Actions jobs end at 6h)
 MIN_SAMPLE = 30              # /stats warns until this many signals have finished
 
 # ---------------------------------------------------------------------------
@@ -205,12 +206,13 @@ FX_MIN_CANDLES = {"15m": 1000, "1d": 220}   # fewer = the download counts as fai
 # Strategy: entries on 15m candles, only in the direction of the 1h trend
 FX_TIMEFRAME = "15m"
 FX_TREND_TF = "1h"          # trend: price and EMA50 above EMA200 = LONG only, below = SHORT only
+FX_TREND_FALLBACK_TF = "15m"  # 1h trend sideways = follow this trend instead (more signals); None = WAIT
 FX_EMA_ENTRY = 20           # pullback line
 FX_EMA_TREND_FAST = 50
 FX_EMA_TREND_SLOW = 200
-FX_BREAKOUT_CANDLES = 20    # breakout = close beyond the high / low of this many candles
-FX_RSI_LONG = (50, 70)      # RSI must be inside this range for a LONG
-FX_RSI_SHORT = (30, 50)     # ... and this one for a SHORT
+FX_BREAKOUT_CANDLES = 12    # breakout = close beyond the high / low of this many candles (12 = last 3h)
+FX_RSI_LONG = (45, 75)      # RSI must be inside this range for a LONG
+FX_RSI_SHORT = (25, 55)     # ... and this one for a SHORT
 FX_MAX_ATR_FROM_EMA = 2.0   # skip when price is more than this many ATRs from EMA20 (too late)
 FX_STOP_ATR = 1.5           # stop loss = 1.5 x the 15m ATR
 FX_REWARD_RISK = 1.5        # take profit = 1.5R, reachable within a few hours

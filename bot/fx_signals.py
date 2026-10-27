@@ -2,11 +2,12 @@
 fx_signals.py - The gold / forex day-trading strategy. Decides LONG / SHORT / WAIT on 15m candles.
 
 Trend : follow the 1h trend only (config.FX_TREND_TF).
-        1h price and EMA50 above EMA200 = LONG only. Both below = SHORT only. Otherwise WAIT.
+        1h price and EMA50 above EMA200 = LONG only. Both below = SHORT only.
+        1h sideways = the 15m trend is used instead (config.FX_TREND_FALLBACK_TF), else WAIT.
 Entry : the last closed 15m candle
-        a) closes beyond the high (LONG) / low (SHORT) of the 20 candles before it (breakout), or
+        a) closes beyond the high (LONG) / low (SHORT) of the 12 candles before it (breakout), or
         b) touched EMA20 and closed back on the trend side of it, in the trend direction (pullback).
-Filter: RSI 50-70 for LONG, 30-50 for SHORT. No signal when price is more than 2 ATR from EMA20.
+Filter: RSI 45-75 for LONG, 25-55 for SHORT. No signal when price is more than 2 ATR from EMA20.
 Levels: stop 1.5 x the 15m ATR, take profit 1.5R (R = stop distance): reachable within a few hours.
 
 After this, fx.py only sends the signal when news and Claude's review agree too (signals.grade).
@@ -49,8 +50,9 @@ def levels(side, price, atr):
     return {"stop": price - sign * risk, "target": price + sign * risk * C.FX_REWARD_RISK}
 
 
-def evaluate(df, trend_side):
-    """df = 15m candles with indicators, trend_side = UP / DOWN / SIDEWAYS of the 1h candles."""
+def evaluate(df, trend_side, trend_tf=None):
+    """df = 15m candles with indicators, trend_side = UP / DOWN / SIDEWAYS of the trend_tf candles (1h)."""
+    trend_tf = trend_tf or C.FX_TREND_TF
     last = df.iloc[-1]
     window = df.iloc[-1 - C.FX_BREAKOUT_CANDLES:-1]
     close, ema20 = float(last["close"]), float(last["ema20"])
@@ -60,13 +62,13 @@ def evaluate(df, trend_side):
     out = {"side": "WAIT", "reason": "", "price": close, "rsi": round(rsi, 1), "atr": atr,
            "adx": round(adx, 1) if adx is not None else None,
            # the 1h trend is the signal's own trend here, so trend and htf are the same
-           "trend": trend_side, "htf": trend_side, "trend_tf": C.FX_TREND_TF,
+           "trend": trend_side, "htf": trend_side, "trend_tf": trend_tf,
            "candle_time": last["time"].isoformat(), "swing_low": swing_low, "swing_high": swing_high,
            "stop": None, "target": None}
 
     side = {"UP": "LONG", "DOWN": "SHORT"}.get(trend_side)
     if side is None:
-        out["reason"] = f"{C.FX_TREND_TF} trend unclear (price and EMA50 not on one side of EMA200)"
+        out["reason"] = f"{trend_tf} trend unclear (price and EMA50 not on one side of EMA200)"
         return out
     long = side == "LONG"
     if long:
@@ -78,7 +80,7 @@ def evaluate(df, trend_side):
     low, high = C.FX_RSI_LONG if long else C.FX_RSI_SHORT
 
     if not (breakout or pullback):
-        out["reason"] = (f"{C.FX_TREND_TF} trend {trend_side}: waiting for a {C.FX_BREAKOUT_CANDLES}-candle "
+        out["reason"] = (f"{trend_tf} trend {trend_side}: waiting for a {C.FX_BREAKOUT_CANDLES}-candle "
                          f"breakout or a pullback to EMA{C.FX_EMA_ENTRY}")
     elif not low <= rsi <= high:
         out["reason"] = f"{side} setup, but RSI {rsi:.0f} is outside {low}-{high}"

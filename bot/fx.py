@@ -1,10 +1,10 @@
 """
 fx.py - Gold and forex (XAU/USD, EUR/USD, GBP/USD, USD/JPY): day-trading signals and the morning bias.
 
-check() runs from `python -m bot run`, `fx` and `loop` (your laptop, not GitHub Actions):
+check() runs from `python -m bot run`, `fx` and `loop` (GitHub Actions runs `loop`, and so can your laptop):
     1. skipped while the forex market is closed (Friday 22:00 to Sunday 21:00 UTC)
     2. 15m candles per pair (fx_data.py); the 1h trend candles are built from them
-    3. 15m signals in the 1h trend direction (fx_signals.py), held as WAIT before big news (fx_calendar.py)
+    3. 15m signals in the 1h trend direction, the 15m trend when 1h is sideways (fx_signals.py), held as WAIT before big news (fx_calendar.py)
     4. new signals -> ONE Claude review for all of them (fx_news.py) -> signals.grade(): sent only when
        trend, news and Claude all agree, at a confidence in FX_SEND_CONFIDENCE, at most
        FX_MAX_SIGNALS_PER_RUN per run (the strongest) and FX_MAX_SIGNALS_PER_DAY per day.
@@ -80,18 +80,21 @@ def check(dry_run=False, now=None):
     for pair in C.FX_PAIRS:
         try:
             m15 = fx_data.get_candles(pair, C.FX_TIMEFRAME, now)
-            trend = fx_signals.trend(fx_signals.add_indicators(fx_data.resample(m15, C.FX_TREND_TF)))
+            m15i = fx_signals.add_indicators(m15)
+            trend, trend_tf = fx_signals.trend(fx_signals.add_indicators(fx_data.resample(m15, C.FX_TREND_TF))), C.FX_TREND_TF
+            if trend == "SIDEWAYS" and C.FX_TREND_FALLBACK_TF:  # 1h unclear: follow the 15m trend
+                trend, trend_tf = fx_signals.trend(m15i), C.FX_TREND_FALLBACK_TF
         except Exception as exc:
             print(f"[fx] {pair['name']}: {exc}")
             continue
         candles[pair["symbol"]] = m15
         prices[pair["name"]] = float(m15["close"].iloc[-1])
-        sig = fx_signals.evaluate(fx_signals.add_indicators(m15), trend)
+        sig = fx_signals.evaluate(m15i, trend, trend_tf)
         held = fx_calendar.hold_for(pair, events, now)
         if held:
             sig = fx_signals.hold(sig, held)
         print(f"[fx] {pair['name']}: {sig['side']} | price {sig['price']:.{pair['digits']}f} | RSI {sig['rsi']} | "
-              f"{C.FX_TREND_TF} trend {trend} | candle {sig['candle_time']} | {sig['reason']}")
+              f"{trend_tf} trend {trend} | candle {sig['candle_time']} | {sig['reason']}")
         if state.is_new_signal(st, _key(pair), sig["side"], sig["candle_time"], C.FX_TIMEFRAME):
             candidates.append((pair, sig))
 

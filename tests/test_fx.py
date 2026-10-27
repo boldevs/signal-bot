@@ -149,7 +149,7 @@ def test_only_with_the_1h_trend():
 
 
 def test_rsi_and_distance_filters():
-    rsi_high = frame(flat() + [(1.1000, 1.1022, 1.0998, 1.1020, 1.1005, 75, 0.0010)])
+    rsi_high = frame(flat() + [(1.1000, 1.1022, 1.0998, 1.1020, 1.1005, 80, 0.0010)])
     assert "RSI" in fx_signals.evaluate(rsi_high, "UP")["reason"]
     far = frame(flat() + [(1.1000, 1.1032, 1.0998, 1.1030, 1.1005, 62, 0.0010)])  # 2.5 ATR from EMA20
     sig = fx_signals.evaluate(far, "UP")
@@ -259,7 +259,7 @@ def _fake_market(monkeypatch, side="LONG", adx=(20, 35, 25, 30)):
     """Every pair signals; ADX per pair in C.FX_PAIRS order (EUR/USD is the strongest by default)."""
     monkeypatch.setattr(fx.fx_data, "get_candles", lambda pair, tf, now=None: m15(end=now or MONDAY))
     order = iter(list(adx) * 50)
-    monkeypatch.setattr(fx.fx_signals, "evaluate", lambda df, trend: {
+    monkeypatch.setattr(fx.fx_signals, "evaluate", lambda df, trend, trend_tf=None: {
         **LONG_SIG(next(order)), "side": side, "candle_time": df["time"].iloc[-1].isoformat()})
     monkeypatch.setattr(fx.fx_calendar, "refresh", lambda st, now=None: [])
     monkeypatch.setattr(C, "FX_DAILY_SIGNAL", False)
@@ -503,6 +503,26 @@ def test_loop_logs_a_failed_run_and_keeps_going(tmp_path, monkeypatch, capsys):
     out = capsys.readouterr().out
     assert runs == [1, "fx", 1, "fx"]  # failed twice, never stopped, gold / forex still ran
     assert "[loop]" in out and "Binance is down" in out and "retry in 5 min" in out
+
+
+def test_loop_stops_after_for_min(tmp_path, monkeypatch, capsys):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "")
+    runs = []
+    monkeypatch.setattr(app, "detect", lambda: runs.append(1) or {})
+    monkeypatch.setattr(app, "notify", lambda dry_run=False: None)
+    monkeypatch.setattr(app.fx, "check", lambda dry_run=False: {})
+    clock = iter(range(0, 100_000, 400))
+    monkeypatch.setattr(app.time, "time", lambda: next(clock))
+    monkeypatch.setattr(app.time, "sleep", lambda s: None)
+    app.watch(True, C.LOOP_EVERY_MIN, with_fx=True, for_min=30)  # returns by itself, no Ctrl+C
+    assert runs and "ran 30 min -> stopping" in capsys.readouterr().out
+
+
+def test_sideways_1h_follows_the_15m_trend():
+    df = frame(flat() + [(1.1000, 1.1022, 1.0998, 1.1020, 1.1005, 62, 0.0010)])
+    sig = fx_signals.evaluate(df, "UP", "15m")
+    assert sig["side"] == "LONG" and sig["trend_tf"] == "15m"
 
 
 def test_loop_command_stops_cleanly_on_ctrl_c(monkeypatch, capsys):

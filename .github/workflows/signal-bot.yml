@@ -1,6 +1,8 @@
-# signal-bot.yml - Runs the bot on GitHub's computers every 5 minutes (15m day-trading signals).
+# signal-bot.yml - Runs the bot on GitHub's computers, checking every 5 minutes (15m day-trading signals).
 #
-# One job, one command: `python -m bot run` checks crypto (detect + notify) AND gold / forex (fx.check).
+# GitHub starts scheduled runs late or drops them (often hours apart), so one job runs
+# `python -m bot loop --for-min=330`: crypto AND gold / forex every 5 minutes for 5.5 hours, answering
+# buttons and /stats too. The schedule below queues the next job, which starts when this one ends.
 # Claude Code is installed every run (cached, so it is quick): gold / forex may need it, and
 # that is only known inside the run. Claude is still only CALLED when there is something to judge.
 # Last step saves the bot's memory (state.json, history.json) back into the repo.
@@ -13,24 +15,26 @@ name: Crypto Signal Bot
 
 on:
   schedule:
-    - cron: "2-59/5 * * * *" # every 5 minutes at :02, :07, ... (GitHub drops runs at :00 most; may start late)
+    - cron: "2-59/5 * * * *" # queues the next job (GitHub drops runs at :00 most; may start late)
   workflow_dispatch:          # lets you press "Run workflow" by hand to test
 
 permissions:
   contents: write             # needed to save state.json / history.json
 
 concurrency:
-  group: signal-bot           # never run two copies at the same time (a late run waits, none overlap)
+  group: signal-bot           # never run two copies at the same time (the next job waits, none overlap)
   cancel-in-progress: false
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 350        # the loop stops itself at 330 min, so memory is saved before this
 
     steps:
       - name: Get the code
         uses: actions/checkout@v5
+        with:
+          ref: main               # latest memory, not the commit from when this job was queued hours ago
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -67,7 +71,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
-        run: python -m bot run
+        run: python -m bot loop --for-min=330
 
       - name: Save memory
         if: ${{ !cancelled() }}   # also after a failed check: what was sent must not be sent again

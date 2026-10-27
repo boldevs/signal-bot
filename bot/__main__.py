@@ -377,14 +377,19 @@ def _log_failure(where, every_min, exc):
     print(traceback.format_exc().rstrip())
 
 
-def watch(dry_run=False, every_min=None, with_fx=False):
-    """Laptop mode: full check every `every_min` minutes, /stats answered within seconds.
+def watch(dry_run=False, every_min=None, with_fx=False, for_min=None):
+    """Full check every `every_min` minutes, /stats answered within seconds.
 
-    `watch` = crypto every CHECK_EVERY_MIN; `loop` = crypto + gold/forex every LOOP_EVERY_MIN."""
+    `watch` = crypto every CHECK_EVERY_MIN; `loop` = crypto + gold/forex every LOOP_EVERY_MIN.
+    for_min = stop after this many minutes (GitHub Actions); None = run until Ctrl+C."""
     every_min = every_min or C.CHECK_EVERY_MIN
     where = "loop" if with_fx else "watch"
     prices, next_check = {}, 0.0
+    stop_at = time.time() + for_min * 60 if for_min else None
     while True:
+        if stop_at and time.time() >= stop_at:
+            print(f"[{where}] ran {for_min} min -> stopping")
+            return
         if time.time() >= next_check:
             try:
                 market = detect()
@@ -485,7 +490,8 @@ def main():
     elif command in ("watch", "loop"):
         try:
             if command == "loop":
-                watch(dry_run, C.LOOP_EVERY_MIN, with_fx=True)
+                for_min = next((int(a.split("=", 1)[1]) for a in args if a.startswith("--for-min=")), None)
+                watch(dry_run, C.LOOP_EVERY_MIN, with_fx=True, for_min=for_min)
             else:
                 watch(dry_run)
         except KeyboardInterrupt:

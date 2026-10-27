@@ -71,6 +71,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+          PYTHONUNBUFFERED: "1"   # show each log line at once (else hidden for hours inside the loop)
         run: python -m bot loop --for-min=330
 
       - name: Save memory

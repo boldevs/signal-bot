@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-27T10:38:16.649191+00:00",
+    "checked_at": "2026-10-27T16:42:55.047614+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -70,12 +70,34 @@
     ],
     "ok": true
   },
-  "last_alert": {},
+  "last_alert": {
+    "BNBUSDT": {
+      "candle_time": "2026-10-27T19:30:00+00:00",
+      "side": "LONG"
+    },
+    "EUR/USD:15m": {
+      "candle_time": "2026-10-27T20:00:00+00:00",
+      "msg_id": 274,
+      "sent_at": "2026-10-27T20:16:15.702041+00:00",
+      "side": "SHORT"
+    },
+    "GBP/USD:15m": {
+      "candle_time": "2026-10-27T20:00:00+00:00",
+      "side": "SHORT"
+    },
+    "USD/JPY:15m": {
+      "candle_time": "2026-10-27T19:15:00+00:00",
+      "side": "LONG"
+    }
+  },
   "last_fx_daily_date": "2026-10-27",
   "last_summary_date": "2026-10-27",
   "seen_events": [
     "923e9984078f",
-    "c93d41de1ccb"
+    "c93d41de1ccb",
+    "aedc659629fa",
+    "5ae6f33699aa",
+    "a90921b8e7cc"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -86,7 +108,12 @@
     "9d4001345bde",
     "c07be982a897",
     "8c9d2c1e576e",
-    "303a11685cc5"
+    "303a11685cc5",
+    "d450a8f1d3da",
+    "2b71cedee2db",
+    "ea607c78a23a",
+    "b920ef3fa231",
+    "711b55922015"
   ],
   "tg_offset": null
 }

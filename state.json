@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-26T15:30:56.353345+00:00",
+    "checked_at": "2026-10-27T00:19:49.717054+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -71,7 +71,7 @@
     "ok": true
   },
   "last_alert": {},
-  "last_fx_daily_date": "2026-10-26",
+  "last_fx_daily_date": "2026-10-27",
   "last_summary_date": "2026-10-26",
   "seen_events": [
     "923e9984078f",

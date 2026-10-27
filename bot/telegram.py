@@ -83,40 +83,41 @@ def analysed_line(now=None):
     return f"🕒 Analysed {local:%d %b %Y %H:%M} (UTC{offset:+g})"
 
 
-def also_line(side, also):
-    """Other coins with the same signal this run (they move together, so they get no alert of their own)."""
-    if not also:
-        return []
-    return [f"🔗 Also signaling {side}: {html.escape(', '.join(also))} (same move, no separate alert)"]
-
-
 CONFIDENCE_ICONS = {"HIGH": "💎", "MEDIUM": "🔸"}
+
+
+def why_line(news, fallback):
+    """One short reason: Claude's view when it gave one, else the news reason."""
+    return f"💬 <i>{html.escape(short_text(news.get('why') or fallback, 120))}</i>"
+
+
+def verdict_line(news, label, agree):
+    """'🤖 Claude: ✅ CONFIRM · 📰 News BULLISH ✅ agrees' in one line."""
+    claude = f"🤖 Claude: {CALL_ICONS[news['call']]} {news['call']} · " if news.get("call") else ""
+    return f"{claude}📰 News {label}" + ("" if agree.startswith("➖") else f" {agree}")
 
 
 def format_signal(coin_name, sig, news, plans=None, also=None, confidence=None):
     e = html.escape
     side, price = sig["side"], sig["price"]
     better = sig.get("entry_low") if side == "LONG" else sig.get("entry_high")
-    agree = news_agreement(side, news["verdict"])
+    conf = f"{CONFIDENCE_ICONS[confidence]} Confidence <b>{confidence}</b> · " if confidence else ""
     lines = [
         f"{ICONS[side]} <b>{side} SIGNAL: {e(coin_name)}</b> · {C.TIMEFRAME}",
-        *([f"{CONFIDENCE_ICONS[confidence]} Confidence <b>{confidence}</b>"] if confidence else []),
-        f"💰 <b>{fmt_price(price)}</b> · Trend {sig['trend']} · RSI {sig['rsi']:.0f}",
-        analysed_line(),
+        f"{conf}Trend {sig['trend']} · RSI {sig['rsi']:.0f}",
         "",
-        f"📍 Entry  <b>{fmt_price(price)}</b>" + (f"  (better: {fmt_price(better)})" if better else ""),
-        f"🛑 Stop    <b>{fmt_price(sig['stop'])}</b>  (-{pct_from(price, sig['stop']):.1f}%)",
-        f"🎯 Target <b>{fmt_price(sig['target'])}</b>  (+{pct_from(price, sig['target']):.1f}%)",
+        f"📍 Entry   <b>{fmt_price(price)}</b>" + (f" (better {fmt_price(better)})" if better else ""),
+        f"🛑 Stop    <b>{fmt_price(sig['stop'])}</b>  -{pct_from(price, sig['stop']):.1f}%",
+        f"🎯 Target  <b>{fmt_price(sig['target'])}</b>  +{pct_from(price, sig['target']):.1f}%",
         "",
-        f"{NEWS_ICONS.get(news['verdict'], '')} News {news['verdict']} · {agree}",
-        f"<i>{e(short_text(news['reason']))}</i>",
-        f"📌 {e(short_text(sig['reason']))}",
-        *claude_line(news),
-        *also_line(side, also),
+        verdict_line(news, news["verdict"], news_agreement(side, news["verdict"])),
+        why_line(news, news["reason"]),
+        *([f"🔗 Also: {e(', '.join(also))}"] if also else []),
     ]
     if plans:
         lines += ["", format_plans(plans)]
-    lines += ["", "⚠️ <i>Paper trade only. Not financial advice.</i>"]
+    lines += ["", f"⏳ {C.EXPIRE_HOURS_BY_TF.get(C.TIMEFRAME, C.RESULT_EXPIRE_HOURS)}h · {analysed_line()}",
+              "<i>Not financial advice.</i>"]
     return "\n".join(lines)
 
 
@@ -198,37 +199,21 @@ def format_lookup(coin_name, tf, sig, news=None):
 def format_event(ev):
     e = html.escape
     up = ev["bias"] == "BULLISH"
-    coin = ev["coin"] or "Other coin / market"
-    lines = [
-        f"{'🚀' if up else '💣'} <b>EVENT ALERT: {e(ev['event'])}</b>",
-        f"Coin: <b>{e(coin)}</b>",
-        f"Possible move: {'📈 BOOM (bullish)' if up else '📉 DUMP (bearish)'}",
-        "",
-    ]
+    coin = ev["coin"] or "market"
+    lines = [f"{'🚀' if up else '💣'} <b>EVENT: {e(ev['event'])}</b> · {e(coin)} · {'📈 bullish' if up else '📉 bearish'}"]
     heads = ev.get("headlines") or [ev["headline"]]
-    lines += [f"📰 {e(h)}" for h in heads[:3]]
+    lines += [f"📰 {e(short_text(h, 120))}" for h in heads[:3]]
     if len(heads) > 3:
-        lines.append(f"…and {len(heads) - 3} more headlines")
+        lines.append(f"…+{len(heads) - 3} more")
     if ev.get("confirm"):
-        lines.append(f"🤖 Claude confirms: <i>{e(short_text(ev['confirm']))}</i>")
+        lines.append(f"🤖 <i>{e(short_text(ev['confirm'], 120))}</i>")
     t = ev.get("trade")
     if t:
-        lines += [
-            "",
-            f"{ICONS[t['side']]} <b>Idea: {t['side']}</b>",
-            entry_line(t),
-            f"🛑 Stop loss: {fmt_price(t['stop'])}",
-            f"🎯 Take profit: {fmt_price(t['target'])}",
-            f"💥 Approx. liquidation at {C.LEVERAGE}x: {fmt_price(t['liquidation'])}",
-        ]
+        lines += ["", f"{ICONS[t['side']]} <b>Idea: {t['side']}</b> at {fmt_price(t['price'])}",
+                  f"🛑 Stop loss {fmt_price(t['stop'])} · 🎯 Take profit {fmt_price(t['target'])}"]
     else:
-        lines += ["", "ℹ️ No price levels: this coin is not on the watch list."
-                  + (" Tap the buttons for a full look." if ev["coin"] else "")]
-    lines += [
-        "",
-        "⚠️ <i>A prediction only, you decide. The news may already be priced in, "
-        "so check the chart first. Not financial advice.</i>",
-    ]
+        lines.append("ℹ️ No levels: not on the watch list." + (" Tap a button 👇" if ev["coin"] else ""))
+    lines += ["", "<i>News may be priced in, check the chart. Not financial advice.</i>"]
     return "\n".join(lines)
 
 
@@ -236,31 +221,19 @@ def format_macro(alert, ideas):
     """alert: from macro.judge(). ideas: {coin name: trade idea dict} for the watched coins."""
     e = html.escape
     up = alert["bias"] == "BULLISH"
-    lines = [
-        f"{'🌍🚀' if up else '🌍💣'} <b>MACRO ALERT</b>",
-        f"Possible crypto move: {'📈 BOOM (bullish)' if up else '📉 DUMP (bearish)'}",
-        f"Markets affected: {e(alert['markets'] or 'unknown')}",
-        *([f"Coins in focus: {e(', '.join(alert['coins']))} (tap 🔎 for a full look)"] if alert.get("coins") else []),
-        "",
-        f"📰 {e(alert['headline'])}",
-        f"Why: {e(alert['reason'])}",
-    ]
+    lines = [f"🌍 <b>MACRO: {'📈 bullish' if up else '📉 bearish'} for crypto</b>",
+             f"📰 {e(short_text(alert['headline'], 120))}",
+             f"💬 <i>{e(short_text(alert['reason'], 120))}</i>"]
     if ideas:
         lines.append("")
         for name, t in ideas.items():
-            lines.append(f"{ICONS[t['side']]} <b>{e(name)} {t['side']}</b> entry {fmt_price(t['price'])} "
-                         f"({fmt_price(t['entry_low'])}-{fmt_price(t['entry_high'])}) | "
-                         f"🛑 {fmt_price(t['stop'])} | 🎯 {fmt_price(t['target'])}")
-    lines += [
-        "",
-        "⚠️ <i>Claude's prediction, you decide. Big news can swing both ways and may already be "
-        "priced in; check the charts first. Oil, gold and stocks have no levels here. "
-        "Not financial advice.</i>",
-    ]
+            lines.append(f"{ICONS[t['side']]} <b>{e(name)} {t['side']}</b> {fmt_price(t['price'])} "
+                         f"· 🛑 {fmt_price(t['stop'])} · 🎯 {fmt_price(t['target'])}")
+    lines += ["", "<i>Claude's guess, check the chart. Not financial advice.</i>"]
     return "\n".join(lines)
 
 
-SIGN_TEXT = {"+": "📈 price UP (+)", "-": "📉 price DOWN (-)", "0": "😐 no clear effect (0)"}
+SIGN_TEXT = {"+": "📈 price UP", "-": "📉 price DOWN", "0": "😐 no clear news"}
 
 
 def fx_news_agreement(side, sign):
@@ -276,23 +249,19 @@ def format_fx_signal(pair, sig, news, confidence, plans=None, now=None):
     side, price = sig["side"], sig["price"]
     lines = [
         f"{ICONS[side]} <b>{side} SIGNAL: {e(pair['name'])}</b> · {C.FX_TIMEFRAME}",
-        f"💰 <b>{fmt_level(price, d)}</b> · {sig['trend_tf']} trend {sig['trend']} · RSI {sig['rsi']:.0f}",
-        analysed_line(now),
-        f"{CONFIDENCE_ICONS[confidence]} Confidence <b>{confidence}</b>",
+        f"{CONFIDENCE_ICONS[confidence]} Confidence <b>{confidence}</b> · {sig['trend_tf']} trend {sig['trend']} "
+        f"· RSI {sig['rsi']:.0f}",
         "",
-        f"📍 Entry  <b>{fmt_level(price, d)}</b>",
-        f"🛑 Stop    <b>{fmt_level(sig['stop'], d)}</b>  (-{pct_from(price, sig['stop']):.2f}%)",
-        f"🎯 Target <b>{fmt_level(sig['target'], d)}</b>  (+{pct_from(price, sig['target']):.2f}%, "
-        f"{C.FX_REWARD_RISK:g}R)",
-        f"⏳ Day trade: expires after {C.FX_EXPIRE_HOURS}h if neither level is hit",
+        f"📍 Entry   <b>{fmt_level(price, d)}</b>",
+        f"🛑 Stop    <b>{fmt_level(sig['stop'], d)}</b>  -{pct_from(price, sig['stop']):.2f}%",
+        f"🎯 Target  <b>{fmt_level(sig['target'], d)}</b>  +{pct_from(price, sig['target']):.2f}%",
         "",
-        f"News: {SIGN_TEXT[news['sign']]} · {fx_news_agreement(side, news['sign'])} ({e(news['source'])})",
-        f"📌 {e(short_text(sig['reason']))}",
-        *claude_line(news),
+        verdict_line(news, SIGN_TEXT[news["sign"]], fx_news_agreement(side, news["sign"])),
+        why_line(news, sig["reason"]),
     ]
     if plans:
         lines += ["", format_plans(plans, d)]
-    lines += ["", "⚠️ <i>Paper trade only. Not financial advice.</i>"]
+    lines += ["", f"⏳ expires after {C.FX_EXPIRE_HOURS}h · {analysed_line(now)}", "<i>Not financial advice.</i>"]
     return "\n".join(lines)
 
 
@@ -305,28 +274,23 @@ def local_time(iso):
 def format_fx_daily(rows, events, now=None):
     """Morning bias. rows: from fx.daily_rows() with news added (or an error). events: big news, next 24h."""
     e = html.escape
-    lines = ["☀️ <b>Daily gold &amp; forex bias</b> · daily candles", analysed_line(now)]
+    lines = ["☀️ <b>Daily gold &amp; forex bias</b>", analysed_line(now)]
     for r in rows:
         pair = r["pair"]
         d = pair["digits"]
         lines.append("")
         if r.get("error"):
-            lines.append(f"❔ <b>{e(pair['name'])}</b>: no data ({e(short_text(r['error'], 80))})")
+            lines.append(f"❔ <b>{e(pair['name'])}</b>: no data")
             continue
         lv, news = r["levels"], r["news"]
-        lines.append(f"{ICONS[r['side']]} <b>{e(pair['name'])} {r['side']}</b> · {fmt_level(r['price'], d)} "
-                     f"· daily trend {r['trend']} · RSI {r['rsi']:.0f}")
+        lines.append(f"{ICONS[r['side']]} <b>{e(pair['name'])} {r['side']}</b> {fmt_level(r['price'], d)} "
+                     f"· RSI {r['rsi']:.0f} · {SIGN_TEXT[news['sign']]}")
         if r.get("why"):
             lines.append(f"<i>{e(r['why'])}</i>")
-        lines.append(f"🔑 Yesterday H {fmt_level(lv['high'], d)} / L {fmt_level(lv['low'], d)} · "
-                     f"Pivot {fmt_level(lv['pivot'], d)} · R1 {fmt_level(lv['r1'], d)} · S1 {fmt_level(lv['s1'], d)}")
-        lines.append(f"📏 20-day range {fmt_level(lv['low20'], d)} - {fmt_level(lv['high20'], d)}")
-        lines.append(f"News: {SIGN_TEXT[news['sign']]} ({e(news['source'])}): <i>{e(short_text(news['reason']))}</i>")
-    offset = C.LOCAL_UTC_OFFSET_HOURS
-    lines += ["", f"📅 <b>Big news, next 24h</b> (UTC{offset:+g}, signals pause {C.NEWS_HOLD_MINUTES} min before)"]
-    lines += [f"⏰ {local_time(ev['time'])} {e(ev['currency'])} {e(ev['title'])}" for ev in events] or [
-        "No high-impact events found."]
-    lines += ["", "ℹ️ <i>A bias for the day, not a trade: 15m signals come separately. Not financial advice.</i>"]
+        lines.append(f"🔑 Pivot {fmt_level(lv['pivot'], d)} · R1 {fmt_level(lv['r1'], d)} · S1 {fmt_level(lv['s1'], d)}")
+    lines += ["", "📅 <b>Big news, 24h</b>"]
+    lines += [f"⏰ {local_time(ev['time'])} {e(ev['currency'])} {e(ev['title'])}" for ev in events] or ["None ✅"]
+    lines += ["", "<i>Bias only, 15m signals come separately. Not financial advice.</i>"]
     return "\n".join(lines)
 
 
@@ -334,24 +298,25 @@ def format_plans(plans, digits=None):
     """Leverage plans (from leverage.plans()) as a short block inside the signal message.
 
     digits = decimals for gold / forex prices (None = crypto price format)."""
-    lines = ["⚡ <b>Leverage plans</b>"]
+    lines = ["⚡ <b>Leverage plans</b> (lose / gain of margin)"]
     for p in plans:
         if p["skip"]:
-            lines.append(f"<b>{p['label']}</b>  skipped (trend does not agree)")
+            lines.append(f"<b>{p['label']}</b> skipped")
             continue
-        tiny = " ⚠️ tiny stop, likely hit" if any("noise" in w for w in p["warnings"]) else ""
-        lines.append(f"<b>{p['label']}</b>  🛑 {fmt_level(p['stop'], digits)}  🎯 {fmt_level(p['target'], digits)}")
-        lines.append(f"      lose {p['loss_low']:.0f}-{p['loss_high']:.0f}% / "
-                     f"gain {p['gain_low']:.0f}-{p['gain_high']:.0f}% of margin{tiny}")
-    lines.append("🔥 <i>High leverage can wipe out your margin in minutes.</i>")
+        tiny = " ⚠️" if any("noise" in w for w in p["warnings"]) else ""
+        lines.append(f"<b>{p['label']}</b> 🛑 {fmt_level(p['stop'], digits)} 🎯 {fmt_level(p['target'], digits)} "
+                     f"· -{p['loss_high']:.0f}%/+{p['gain_high']:.0f}%{tiny}")
     return "\n".join(lines)
 
 
 def format_summary(rows):
     """rows: list of (coin_name, side, price, rsi)"""
-    lines = ["📋 <b>Daily summary</b> (bot is running ✅)", ""]
+    lines = ["📋 <b>Daily summary</b> · bot running ✅", ""]
     for name, side, price, rsi in rows:
-        lines.append(f"{ICONS.get(side, '❔')} {html.escape(name)}: {side} | {fmt_price(price)} | RSI {rsi}")
+        lines.append(f"{ICONS.get(side, '❔')} <b>{html.escape(name)}</b> {fmt_price(price)} · RSI {rsi}"
+                     + ("" if side == "WAIT" else f" · <b>{side}</b>"))
+    if rows and all(side == "WAIT" for _, side, _, _ in rows):
+        lines += ["", "<i>No setups right now, signals come when one appears.</i>"]
     return "\n".join(lines)
 
 

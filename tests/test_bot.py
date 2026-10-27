@@ -244,7 +244,7 @@ def test_full_run_dry(tmp_path, monkeypatch, capsys):
     assert st["last_summary_date"] is not None
     assert "Daily summary" in out
     assert out.count("LONG SIGNAL") == 1  # coins move together: one alert, the rest listed in it
-    assert "LONG SIGNAL: BTC" in out and "Also signaling LONG: ETH, SOL" in out
+    assert "LONG SIGNAL: BTC" in out and "Also: ETH, SOL" in out
     assert "Confidence <b>HIGH</b>" in out
     assert "News BULLISH" in out and "Claude: ✅ CONFIRM" in out
     assert set(st["last_alert"]) == {c["symbol"] for c in C.COINS}  # none of them repeats next run
@@ -281,7 +281,7 @@ def test_event_message_and_pipeline(tmp_path, monkeypatch, capsys):
     app.detect()
     app.notify(dry_run=True)
     out = capsys.readouterr().out
-    assert "EVENT ALERT: Exchange listing" in out and "Claude confirms" in out
+    assert "EVENT: Exchange listing" in out and "🤖 <i>" in out
     app.detect()
     assert json.loads((tmp_path / C.PENDING_FILE).read_text())["events"] == []
 
@@ -374,7 +374,7 @@ def test_macro_full_pipeline_dry(tmp_path, monkeypatch, capsys):
     app.detect()
     app.notify(dry_run=True)
     out = capsys.readouterr().out
-    assert "MACRO ALERT" in out and "BTC LONG" in out and "ETH LONG" in out
+    assert "MACRO: 📈 bullish" in out and "BTC LONG" in out and "ETH LONG" in out
     app.detect()  # same headline again -> already judged
     assert json.loads((tmp_path / C.PENDING_FILE).read_text())["macro"] == []
 
@@ -853,7 +853,8 @@ def test_caution_sends_nothing_and_logs_quietly(tmp_path, monkeypatch):
     assert set(st["last_alert"]) == {c["symbol"] for c in C.COINS}  # not reviewed again next run
 
 
-def test_only_high_confidence_by_default(tmp_path, monkeypatch):
+def test_medium_only_when_configured(tmp_path, monkeypatch):
+    monkeypatch.setattr(C, "SEND_CONFIDENCE", ["HIGH"])
     neutral = "VERDICT: NEUTRAL\nREASON: Nothing new\nCALL: CONFIRM\nWHY: Clean trend"
     (tmp_path / "a").mkdir()
     (tmp_path / "b").mkdir()
@@ -873,12 +874,12 @@ def test_sent_signal_is_recorded_with_message_id(tmp_path, monkeypatch):
     assert json.loads((tmp_path / C.STATE_FILE).read_text())["last_alert"]["BTCUSDT"]["msg_id"] == 123
 
 
-def test_max_three_signals_per_day(tmp_path, monkeypatch):
+def test_daily_signal_limit(tmp_path, monkeypatch):
     from datetime import datetime, timezone
     now = datetime.now(timezone.utc).isoformat()
     done = [dict(_rec(), id=f"old{i}", status="WIN", result_r=1.5, announced=True,
                  closed_at=now, sent_at=now) for i in range(C.MAX_SIGNALS_PER_DAY)]
-    assert tracker.sent_today({"signals": done}) == 3
+    assert tracker.sent_today({"signals": done}) == C.MAX_SIGNALS_PER_DAY
     sent = _crypto_run(tmp_path, monkeypatch, CONFIRM_BULLISH, history={"signals": done})
     assert not any("LONG SIGNAL" in t for t in sent)
     hist = json.loads((tmp_path / C.HISTORY_FILE).read_text())["signals"]
@@ -926,12 +927,12 @@ def test_events_wait_for_claude(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(sentiment, "run_claude", lambda q, s: None)  # Claude down: nothing sent, retried
     app.detect()
     app.notify(dry_run=True)
-    assert "EVENT ALERT" not in capsys.readouterr().out
+    assert "EVENT:" not in capsys.readouterr().out
     app.detect()
     assert json.loads((tmp_path / C.PENDING_FILE).read_text())["events"]
     monkeypatch.setattr(sentiment, "run_claude", lambda q, s: "1|NO|Rumour only")  # rejected: not asked again
     app.notify(dry_run=True)
-    assert "EVENT ALERT" not in capsys.readouterr().out
+    assert "EVENT:" not in capsys.readouterr().out
     app.detect()
     assert json.loads((tmp_path / C.PENDING_FILE).read_text())["events"] == []
 
@@ -953,7 +954,7 @@ def test_macro_against_a_recent_signal_becomes_a_note_on_it(tmp_path, monkeypatc
                         lambda text, dry=False, markup=None, reply_to=None: sent.append((text, reply_to)) or 5)
     app.detect()
     app.notify()
-    assert not any("MACRO ALERT" in t for t, _ in sent)
+    assert not any("MACRO:" in t for t, _ in sent)
     notes = [(t, r) for t, r in sent if "Macro news against this LONG: BTC" in t]
     assert len(notes) == 1 and notes[0][1] == 77
     app.detect()  # judged and handled: not asked again

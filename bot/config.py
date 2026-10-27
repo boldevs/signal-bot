@@ -85,9 +85,9 @@ FLIP_COOLDOWN_CANDLES = 3  # after LONG, no SHORT for this many candles (and the
 # really one trade, so only the strongest (highest ADX) is sent and the others with the same direction
 # are listed in it as "also signaling". Every signal not sent is logged quietly in history.json, so
 # /stats can show whether the filters help (see GLOSSARY.md).
-MAX_SIGNALS_PER_RUN = 1
-MAX_SIGNALS_PER_DAY = 3      # per local day (LOCAL_UTC_OFFSET_HOURS)
-SEND_CONFIDENCE = ["HIGH"]   # HIGH = news agrees too; MEDIUM = news neutral. ["HIGH", "MEDIUM"] = send both
+MAX_SIGNALS_PER_RUN = 2      # one LONG group + one SHORT group can both go out
+MAX_SIGNALS_PER_DAY = 8      # per local day (LOCAL_UTC_OFFSET_HOURS)
+SEND_CONFIDENCE = ["HIGH", "MEDIUM"]  # HIGH = news agrees too; MEDIUM = news neutral (most news is). ["HIGH"] = fewer
 
 # ---------------------------------------------------------------------------
 # 4. Risk settings (shown in the alert, the bot does NOT trade)
@@ -218,8 +218,8 @@ FX_EXPIRE_HOURS = 4         # neither TP nor stop within 4 hours = EXPIRED (day 
 
 # Fewer, higher-quality signals (same rules as crypto: trend, news and Claude must all agree)
 FX_MAX_SIGNALS_PER_RUN = 1
-FX_MAX_SIGNALS_PER_DAY = 3      # gold / forex together, per local day (LOCAL_UTC_OFFSET_HOURS)
-FX_SEND_CONFIDENCE = ["HIGH"]   # HIGH = news agrees; MEDIUM = news neutral. ["HIGH", "MEDIUM"] = send both
+FX_MAX_SIGNALS_PER_DAY = 6      # gold / forex together, per local day (LOCAL_UTC_OFFSET_HOURS)
+FX_SEND_CONFIDENCE = ["HIGH", "MEDIUM"]  # HIGH = news agrees; MEDIUM = news neutral. ["HIGH"] = fewer
 
 # Market hours (UTC): closed from Friday FX_CLOSE_HOUR_UTC to Sunday FX_OPEN_HOUR_UTC
 FX_CLOSE_HOUR_UTC = 22

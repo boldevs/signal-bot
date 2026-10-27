@@ -309,7 +309,7 @@ def test_max_3_per_day(tmp_path, monkeypatch):
     today = [{"id": f"x{i}", "coin": "XAU/USD", "symbol": "XAU/USD", "market": "fx", "status": "WIN",
               "sent_at": (MONDAY - timedelta(hours=i + 1)).isoformat(), "announced": True, "side": "LONG",
               "candle_time": "2026-10-26T00:00:00+00:00", "tf": "15m", "closed_at": None, "result_r": 1.5}
-             for i in range(3)]
+             for i in range(C.FX_MAX_SIGNALS_PER_DAY)]
     tracker.save(C.HISTORY_FILE, {"signals": today})
     fx.check(now=MONDAY)
     assert sent == []
@@ -335,6 +335,7 @@ def test_news_against_the_side_means_no_signal(tmp_path, monkeypatch):
 
 def test_medium_only_when_configured(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(C, "FX_SEND_CONFIDENCE", ["HIGH"])
     sent = _fake_market(monkeypatch)
     _claude(monkeypatch, "0|CONFIRM|No news either way")
     fx.check(now=MONDAY)

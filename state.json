@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-28T10:48:54.625340+00:00",
+    "checked_at": "2026-10-28T16:50:10.155883+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -92,11 +92,11 @@
       "side": "LONG"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-10-28T09:15:00+00:00",
+      "candle_time": "2026-10-28T14:00:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-10-28T10:45:00+00:00",
+      "candle_time": "2026-10-28T18:15:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
@@ -156,7 +156,12 @@
     "83d7a7f6d199",
     "dcd9362da80d",
     "7d70c7010d01",
-    "5edb5b9a5b91"
+    "5edb5b9a5b91",
+    "d0f8f872b499",
+    "bd37bfd3f8f8",
+    "1fd9dba15325",
+    "71e71f16b374",
+    "cbc2e2b9f1c5"
   ],
   "tg_offset": null
 }

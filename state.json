@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-28T22:53:50.763197+00:00",
+    "checked_at": "2026-10-29T04:55:37.097068+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -71,32 +71,36 @@
     "ok": true
   },
   "last_alert": {
+    "ADAUSDT": {
+      "candle_time": "2026-10-29T05:30:00+00:00",
+      "side": "SHORT"
+    },
     "AVAXUSDT": {
-      "candle_time": "2026-10-28T20:00:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-29T05:45:00+00:00",
+      "side": "SHORT"
     },
     "BNBUSDT": {
-      "candle_time": "2026-10-28T19:15:00+00:00",
+      "candle_time": "2026-10-29T05:30:00+00:00",
       "side": "LONG"
     },
     "BTCUSDT": {
-      "candle_time": "2026-10-28T19:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-29T05:45:00+00:00",
+      "side": "SHORT"
     },
     "DOGEUSDT": {
       "candle_time": "2026-10-29T00:00:00+00:00",
       "side": "LONG"
     },
     "ETHUSDT": {
-      "candle_time": "2026-10-28T11:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-29T05:30:00+00:00",
+      "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-10-29T00:00:00+00:00",
+      "candle_time": "2026-10-29T05:45:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-10-29T00:00:00+00:00",
+      "candle_time": "2026-10-29T05:30:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
@@ -104,26 +108,24 @@
       "side": "LONG"
     },
     "SOLUSDT": {
-      "candle_time": "2026-10-28T19:30:00+00:00",
-      "msg_id": 285,
-      "sent_at": "2026-10-28T19:45:24.529574+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-29T05:45:00+00:00",
+      "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-10-29T00:00:00+00:00",
+      "candle_time": "2026-10-29T04:45:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-10-28T18:45:00+00:00",
+      "candle_time": "2026-10-29T05:15:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
-      "candle_time": "2026-10-28T22:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-29T05:30:00+00:00",
+      "side": "SHORT"
     }
   },
   "last_fx_daily_date": "2026-10-29",
-  "last_summary_date": "2026-10-28",
+  "last_summary_date": "2026-10-29",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",
@@ -132,7 +134,8 @@
     "a90921b8e7cc",
     "77c389988a5b",
     "13e36c1aefb6",
-    "058a95e647a0"
+    "058a95e647a0",
+    "98a6cdb25e5d"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -171,7 +174,9 @@
     "9d147fcc3e1f",
     "a0e01a7c2c97",
     "377aca7d79f4",
-    "eb753f46e0dc"
+    "eb753f46e0dc",
+    "a073c8aa15db",
+    "511cc5cede7d"
   ],
   "tg_offset": null
 }

@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-28T16:50:10.155883+00:00",
+    "checked_at": "2026-10-28T22:53:50.763197+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -72,19 +72,19 @@
   },
   "last_alert": {
     "AVAXUSDT": {
-      "candle_time": "2026-10-28T07:45:00+00:00",
+      "candle_time": "2026-10-28T20:00:00+00:00",
       "side": "LONG"
     },
     "BNBUSDT": {
-      "candle_time": "2026-10-27T21:30:00+00:00",
+      "candle_time": "2026-10-28T19:15:00+00:00",
       "side": "LONG"
     },
     "BTCUSDT": {
-      "candle_time": "2026-10-28T06:00:00+00:00",
+      "candle_time": "2026-10-28T19:30:00+00:00",
       "side": "LONG"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-10-28T12:15:00+00:00",
+      "candle_time": "2026-10-29T00:00:00+00:00",
       "side": "LONG"
     },
     "ETHUSDT": {
@@ -92,11 +92,11 @@
       "side": "LONG"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-10-28T14:00:00+00:00",
+      "candle_time": "2026-10-29T00:00:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-10-28T18:15:00+00:00",
+      "candle_time": "2026-10-29T00:00:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
@@ -104,23 +104,25 @@
       "side": "LONG"
     },
     "SOLUSDT": {
-      "candle_time": "2026-10-28T11:15:00+00:00",
+      "candle_time": "2026-10-28T19:30:00+00:00",
+      "msg_id": 285,
+      "sent_at": "2026-10-28T19:45:24.529574+00:00",
       "side": "LONG"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-10-28T13:15:00+00:00",
+      "candle_time": "2026-10-29T00:00:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-10-28T11:45:00+00:00",
+      "candle_time": "2026-10-28T18:45:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
-      "candle_time": "2026-10-28T04:30:00+00:00",
+      "candle_time": "2026-10-28T22:30:00+00:00",
       "side": "LONG"
     }
   },
-  "last_fx_daily_date": "2026-10-28",
+  "last_fx_daily_date": "2026-10-29",
   "last_summary_date": "2026-10-28",
   "seen_events": [
     "923e9984078f",
@@ -161,7 +163,15 @@
     "bd37bfd3f8f8",
     "1fd9dba15325",
     "71e71f16b374",
-    "cbc2e2b9f1c5"
+    "cbc2e2b9f1c5",
+    "b3b3f03900a8",
+    "1d74d498d5c6",
+    "28a7d40845a3",
+    "c6cbe5982ac6",
+    "9d147fcc3e1f",
+    "a0e01a7c2c97",
+    "377aca7d79f4",
+    "eb753f46e0dc"
   ],
   "tg_offset": null
 }

@@ -84,11 +84,11 @@
       "side": "LONG"
     },
     "BTCUSDT": {
-      "candle_time": "2026-10-29T05:45:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-10-29T17:15:00+00:00",
+      "side": "LONG"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-10-29T00:00:00+00:00",
+      "candle_time": "2026-10-29T17:45:00+00:00",
       "side": "LONG"
     },
     "ETHUSDT": {
@@ -96,7 +96,7 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-10-29T09:00:00+00:00",
+      "candle_time": "2026-10-29T19:45:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
@@ -108,15 +108,15 @@
       "side": "LONG"
     },
     "SOLUSDT": {
-      "candle_time": "2026-10-29T05:45:00+00:00",
+      "candle_time": "2026-10-29T19:30:00+00:00",
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-10-29T16:45:00+00:00",
+      "candle_time": "2026-10-29T19:30:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-10-29T16:00:00+00:00",
+      "candle_time": "2026-10-29T22:15:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
@@ -136,7 +136,11 @@
     "13e36c1aefb6",
     "058a95e647a0",
     "98a6cdb25e5d",
-    "77d234d5926e"
+    "77d234d5926e",
+    "11e70220f819",
+    "c738d10ba70f",
+    "fd0ab62c641f",
+    "acfb0d2a10f7"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -185,7 +189,10 @@
     "9cf8aad819d8",
     "68def7ba12aa",
     "5ee5278176e0",
-    "e1393016d1fa"
+    "e1393016d1fa",
+    "63e0dc5c8950",
+    "788ff45bbc9b",
+    "61d966735caf"
   ],
   "tg_offset": null
 }

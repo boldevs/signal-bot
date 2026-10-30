@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-30T11:06:28.249484+00:00",
+    "checked_at": "2026-10-30T17:10:13.933975+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -76,11 +76,11 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-10-30T02:45:00+00:00",
+      "candle_time": "2026-10-30T15:15:00+00:00",
       "side": "SHORT"
     },
     "BNBUSDT": {
-      "candle_time": "2026-10-30T03:00:00+00:00",
+      "candle_time": "2026-10-30T15:30:00+00:00",
       "side": "SHORT"
     },
     "BTCUSDT": {
@@ -98,11 +98,11 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-10-30T11:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-30T20:30:00+00:00",
+      "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-10-30T06:45:00+00:00",
+      "candle_time": "2026-10-30T20:00:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
@@ -114,7 +114,7 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-10-30T14:00:00+00:00",
+      "candle_time": "2026-10-30T18:15:00+00:00",
       "side": "SHORT"
     },
     "XAU/USD:15m": {
@@ -150,7 +150,10 @@
     "aff532a24de8",
     "dcd5c41c7e8f",
     "928f80c361e0",
-    "a1684edd080d"
+    "a1684edd080d",
+    "7fe415182e0b",
+    "156da5c1fb6a",
+    "b1b3f7a7c414"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -208,7 +211,13 @@
     "a92b4691dae7",
     "596db541ca93",
     "8148511be80b",
-    "293d4ddf7d10"
+    "293d4ddf7d10",
+    "8f0c213f8db7",
+    "c2ba7849f14d",
+    "33d4398b1b94",
+    "511d102ec164",
+    "79f778829a14",
+    "72a20fe4b779"
   ],
   "tg_offset": null
 }

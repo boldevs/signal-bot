@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-29T23:02:53.122231+00:00",
+    "checked_at": "2026-10-30T05:04:41.528776+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -49,18 +49,18 @@
       },
       {
         "currency": "JPY",
-        "time": "2026-10-30T02:30:00+00:00",
+        "time": "2026-10-30T03:02:00+00:00",
+        "title": "BOJ Outlook Report"
+      },
+      {
+        "currency": "JPY",
+        "time": "2026-10-30T03:02:00+00:00",
         "title": "BOJ Policy Rate"
       },
       {
         "currency": "JPY",
-        "time": "2026-10-30T02:30:00+00:00",
+        "time": "2026-10-30T03:02:00+00:00",
         "title": "Monetary Policy Statement"
-      },
-      {
-        "currency": "JPY",
-        "time": "2026-10-30T02:31:00+00:00",
-        "title": "BOJ Outlook Report"
       },
       {
         "currency": "JPY",
@@ -72,7 +72,7 @@
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-10-29T05:30:00+00:00",
+      "candle_time": "2026-10-30T05:45:00+00:00",
       "side": "SHORT"
     },
     "AVAXUSDT": {
@@ -84,23 +84,25 @@
       "side": "SHORT"
     },
     "BTCUSDT": {
-      "candle_time": "2026-10-29T17:15:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-30T05:45:00+00:00",
+      "side": "SHORT"
     },
     "DOGEUSDT": {
       "candle_time": "2026-10-29T17:45:00+00:00",
       "side": "LONG"
     },
     "ETHUSDT": {
-      "candle_time": "2026-10-29T05:30:00+00:00",
+      "candle_time": "2026-10-30T07:30:00+00:00",
+      "msg_id": 302,
+      "sent_at": "2026-10-30T07:46:43.315827+00:00",
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-10-30T00:00:00+00:00",
+      "candle_time": "2026-10-30T08:15:00+00:00",
       "side": "LONG"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-10-30T03:45:00+00:00",
+      "candle_time": "2026-10-30T06:45:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
@@ -112,11 +114,11 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-10-30T00:15:00+00:00",
+      "candle_time": "2026-10-30T07:30:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-10-30T03:00:00+00:00",
+      "candle_time": "2026-10-30T06:45:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
@@ -144,7 +146,9 @@
     "978b29e13476",
     "0a093175ae86",
     "f88e1d80c2c4",
-    "3a534ec2da18"
+    "3a534ec2da18",
+    "aff532a24de8",
+    "dcd5c41c7e8f"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -198,7 +202,8 @@
     "788ff45bbc9b",
     "61d966735caf",
     "819ebc8c24cf",
-    "f21b60581ea3"
+    "f21b60581ea3",
+    "a92b4691dae7"
   ],
   "tg_offset": null
 }

@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-10-30T05:04:41.528776+00:00",
+    "checked_at": "2026-10-30T11:06:28.249484+00:00",
     "events": [
       {
         "currency": "GBP",
@@ -64,7 +64,7 @@
       },
       {
         "currency": "JPY",
-        "time": "2026-10-30T05:30:00+00:00",
+        "time": "2026-10-30T06:30:00+00:00",
         "title": "BOJ Press Conference"
       }
     ],
@@ -98,7 +98,7 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-10-30T08:15:00+00:00",
+      "candle_time": "2026-10-30T11:30:00+00:00",
       "side": "LONG"
     },
     "GBP/USD:15m": {
@@ -114,11 +114,11 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-10-30T07:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-30T14:00:00+00:00",
+      "side": "SHORT"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-10-30T06:45:00+00:00",
+      "candle_time": "2026-10-30T11:15:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
@@ -148,7 +148,9 @@
     "f88e1d80c2c4",
     "3a534ec2da18",
     "aff532a24de8",
-    "dcd5c41c7e8f"
+    "dcd5c41c7e8f",
+    "928f80c361e0",
+    "a1684edd080d"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -203,7 +205,10 @@
     "61d966735caf",
     "819ebc8c24cf",
     "f21b60581ea3",
-    "a92b4691dae7"
+    "a92b4691dae7",
+    "596db541ca93",
+    "8148511be80b",
+    "293d4ddf7d10"
   ],
   "tg_offset": null
 }

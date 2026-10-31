@@ -102,7 +102,7 @@
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-10-30T20:00:00+00:00",
+      "candle_time": "2026-10-30T21:15:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
@@ -127,7 +127,7 @@
     }
   },
   "last_fx_daily_date": "2026-10-30",
-  "last_summary_date": "2026-10-30",
+  "last_summary_date": "2026-10-31",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",
@@ -217,7 +217,9 @@
     "33d4398b1b94",
     "511d102ec164",
     "79f778829a14",
-    "72a20fe4b779"
+    "72a20fe4b779",
+    "014cd08ec256",
+    "2c132b594bdc"
   ],
   "tg_offset": null
 }

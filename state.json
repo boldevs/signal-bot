@@ -88,8 +88,8 @@
       "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-10-29T17:45:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-10-31T10:45:00+00:00",
+      "side": "SHORT"
     },
     "ETHUSDT": {
       "candle_time": "2026-10-30T07:30:00+00:00",
@@ -154,7 +154,8 @@
     "7fe415182e0b",
     "156da5c1fb6a",
     "b1b3f7a7c414",
-    "b75f94eba5bf"
+    "b75f94eba5bf",
+    "0eeec6628bfb"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -221,7 +222,8 @@
     "72a20fe4b779",
     "014cd08ec256",
     "2c132b594bdc",
-    "4e2e3246d8da"
+    "4e2e3246d8da",
+    "b93582f933b2"
   ],
   "tg_offset": null
 }

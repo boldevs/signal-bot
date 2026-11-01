@@ -80,8 +80,8 @@
       "side": "LONG"
     },
     "BNBUSDT": {
-      "candle_time": "2026-10-30T15:30:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-01T15:45:00+00:00",
+      "side": "LONG"
     },
     "BTCUSDT": {
       "candle_time": "2026-10-30T05:45:00+00:00",
@@ -92,7 +92,7 @@
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-01T09:30:00+00:00",
+      "candle_time": "2026-11-01T13:45:00+00:00",
       "side": "LONG"
     },
     "EUR/USD:15m": {
@@ -108,7 +108,9 @@
       "side": "LONG"
     },
     "SOLUSDT": {
-      "candle_time": "2026-10-29T19:30:00+00:00",
+      "candle_time": "2026-11-01T14:45:00+00:00",
+      "msg_id": 312,
+      "sent_at": "2026-11-01T15:03:29.435812+00:00",
       "side": "SHORT"
     },
     "USD/JPY:15m": {
@@ -224,7 +226,8 @@
     "014cd08ec256",
     "2c132b594bdc",
     "4e2e3246d8da",
-    "b93582f933b2"
+    "b93582f933b2",
+    "cd8ae3d475d6"
   ],
   "tg_offset": null
 }

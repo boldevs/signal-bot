@@ -76,8 +76,8 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-10-30T15:15:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-01T09:30:00+00:00",
+      "side": "LONG"
     },
     "BNBUSDT": {
       "candle_time": "2026-10-30T15:30:00+00:00",
@@ -92,10 +92,8 @@
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-10-30T07:30:00+00:00",
-      "msg_id": 302,
-      "sent_at": "2026-10-30T07:46:43.315827+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-01T09:30:00+00:00",
+      "side": "LONG"
     },
     "EUR/USD:15m": {
       "candle_time": "2026-10-30T20:30:00+00:00",

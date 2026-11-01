@@ -106,8 +106,8 @@
       "side": "LONG"
     },
     "LINKUSDT": {
-      "candle_time": "2026-10-30T02:45:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-10-31T23:30:00+00:00",
+      "side": "LONG"
     },
     "SOLUSDT": {
       "candle_time": "2026-10-29T19:30:00+00:00",

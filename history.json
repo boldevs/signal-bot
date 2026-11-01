@@ -3886,6 +3886,25 @@
       "symbol": "DOGEUSDT",
       "target": 0.07493057462859115,
       "tf": "15m"
+    },
+    {
+      "announced": true,
+      "call": "CAUTION",
+      "candle_time": "2026-10-31T23:30:00+00:00",
+      "closed_at": "2026-11-01T00:00:00+00:00",
+      "coin": "LINK",
+      "entry": 11.716,
+      "id": "LINKUSDT-2026-10-31T23:30:00+00:00",
+      "move_1h": -0.39,
+      "move_2h": null,
+      "result_r": -1.0,
+      "side": "LONG",
+      "skipped": "Claude",
+      "status": "LOSS",
+      "stop": 11.662573886493085,
+      "symbol": "LINKUSDT",
+      "target": 11.79613917026037,
+      "tf": "15m"
     }
   ]
 }

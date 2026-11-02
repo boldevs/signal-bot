@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-01T21:05:09.859106+00:00",
+    "checked_at": "2026-11-02T03:08:02.059873+00:00",
     "events": [
       {
         "currency": "USD",
@@ -73,37 +73,35 @@
       "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-01T21:45:00+00:00",
+      "candle_time": "2026-11-01T23:15:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-01T13:45:00+00:00",
+      "candle_time": "2026-11-01T23:45:00+00:00",
       "side": "LONG"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-01T21:30:00+00:00",
+      "candle_time": "2026-11-02T02:30:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-01T21:45:00+00:00",
+      "candle_time": "2026-11-02T03:45:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
-      "candle_time": "2026-10-31T23:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-02T00:00:00+00:00",
+      "side": "SHORT"
     },
     "SOLUSDT": {
-      "candle_time": "2026-11-01T21:45:00+00:00",
+      "candle_time": "2026-11-02T00:30:00+00:00",
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-01T21:30:00+00:00",
-      "msg_id": 314,
-      "sent_at": "2026-11-01T21:46:59.616766+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-02T02:00:00+00:00",
+      "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-01T22:15:00+00:00",
+      "candle_time": "2026-11-02T02:45:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
@@ -111,8 +109,8 @@
       "side": "SHORT"
     }
   },
-  "last_fx_daily_date": "2026-10-30",
-  "last_summary_date": "2026-11-01",
+  "last_fx_daily_date": "2026-11-02",
+  "last_summary_date": "2026-11-02",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",
@@ -212,7 +210,8 @@
     "2c132b594bdc",
     "4e2e3246d8da",
     "b93582f933b2",
-    "cd8ae3d475d6"
+    "cd8ae3d475d6",
+    "0241c2817de7"
   ],
   "tg_offset": null
 }

@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-03T21:33:28.541051+00:00",
+    "checked_at": "2026-11-04T03:34:55.900022+00:00",
     "events": [
       {
         "currency": "USD",
@@ -57,7 +57,7 @@
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-11-02T21:15:00+00:00",
+      "candle_time": "2026-11-04T04:15:00+00:00",
       "side": "SHORT"
     },
     "AVAXUSDT": {
@@ -69,40 +69,40 @@
       "side": "SHORT"
     },
     "BTCUSDT": {
-      "candle_time": "2026-11-04T01:00:00+00:00",
+      "candle_time": "2026-11-04T04:15:00+00:00",
       "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-02T22:15:00+00:00",
+      "candle_time": "2026-11-04T04:15:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-03T20:30:00+00:00",
+      "candle_time": "2026-11-04T06:15:00+00:00",
       "side": "LONG"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-03T23:15:00+00:00",
+      "candle_time": "2026-11-04T07:15:00+00:00",
       "side": "LONG"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-03T23:30:00+00:00",
+      "candle_time": "2026-11-04T07:15:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-02T00:00:00+00:00",
+      "candle_time": "2026-11-04T04:15:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
-      "candle_time": "2026-11-02T23:00:00+00:00",
+      "candle_time": "2026-11-04T04:15:00+00:00",
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-03T23:00:00+00:00",
+      "candle_time": "2026-11-04T06:15:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-04T00:30:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-04T05:15:00+00:00",
+      "side": "LONG"
     },
     "XRPUSDT": {
       "candle_time": "2026-11-03T19:15:00+00:00",
@@ -151,7 +151,9 @@
     "654e85847867",
     "76b251fd9e20",
     "6d5b8d60078e",
-    "1cb302717b6a"
+    "1cb302717b6a",
+    "60fe03c5b2f7",
+    "52cf9face2bd"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -235,7 +237,9 @@
     "9855ed786b8d",
     "00157c1ca761",
     "fb43fef0896a",
-    "be505e11af60"
+    "be505e11af60",
+    "1c1c0273fae0",
+    "228712ed1936"
   ],
   "tg_offset": null
 }

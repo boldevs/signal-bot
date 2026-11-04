@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-04T09:36:53.416015+00:00",
+    "checked_at": "2026-11-04T15:42:59.187532+00:00",
     "events": [
       {
         "currency": "USD",
@@ -57,19 +57,19 @@
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-11-04T04:15:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-04T19:00:00+00:00",
+      "side": "LONG"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-03T04:30:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-04T18:00:00+00:00",
+      "side": "LONG"
     },
     "BNBUSDT": {
-      "candle_time": "2026-11-04T00:45:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-04T20:00:00+00:00",
+      "side": "LONG"
     },
     "BTCUSDT": {
-      "candle_time": "2026-11-04T13:00:00+00:00",
+      "candle_time": "2026-11-04T20:15:00+00:00",
       "side": "LONG"
     },
     "DOGEUSDT": {
@@ -77,17 +77,15 @@
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-04T13:00:00+00:00",
+      "candle_time": "2026-11-04T20:15:00+00:00",
       "side": "LONG"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-04T11:15:00+00:00",
-      "msg_id": 337,
-      "sent_at": "2026-11-04T11:31:19.802170+00:00",
+      "candle_time": "2026-11-04T20:45:00+00:00",
       "side": "LONG"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-04T13:00:00+00:00",
+      "candle_time": "2026-11-04T20:00:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
@@ -95,15 +93,15 @@
       "side": "SHORT"
     },
     "SOLUSDT": {
-      "candle_time": "2026-11-04T04:15:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-04T19:00:00+00:00",
+      "side": "LONG"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-04T12:30:00+00:00",
+      "candle_time": "2026-11-04T19:30:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-04T05:15:00+00:00",
+      "candle_time": "2026-11-04T20:45:00+00:00",
       "side": "LONG"
     },
     "XRPUSDT": {
@@ -158,7 +156,8 @@
     "52cf9face2bd",
     "bed866a0034a",
     "24e4bc12eb53",
-    "cde2e704f1ff"
+    "cde2e704f1ff",
+    "9aeccae6e0c3"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -248,7 +247,11 @@
     "deaa8aae6b37",
     "fea37c1030e7",
     "e59337c43072",
-    "6b0bd531d98f"
+    "6b0bd531d98f",
+    "a79c775d5796",
+    "f7c4ebfade11",
+    "3f1e71610092",
+    "2a1f67c2289c"
   ],
   "tg_offset": null
 }

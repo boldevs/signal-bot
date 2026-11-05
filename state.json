@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-05T09:49:30.593971+00:00",
+    "checked_at": "2026-11-05T16:41:26.164927+00:00",
     "events": [
       {
         "currency": "USD",
@@ -57,12 +57,12 @@
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-11-04T19:00:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-05T20:45:00+00:00",
+      "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-04T18:00:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-05T20:45:00+00:00",
+      "side": "SHORT"
     },
     "BNBUSDT": {
       "candle_time": "2026-11-04T20:00:00+00:00",
@@ -73,7 +73,7 @@
       "side": "LONG"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-04T04:15:00+00:00",
+      "candle_time": "2026-11-05T20:45:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
@@ -81,15 +81,15 @@
       "side": "LONG"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-04T23:00:00+00:00",
+      "candle_time": "2026-11-05T17:30:00+00:00",
       "side": "LONG"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-05T12:00:00+00:00",
+      "candle_time": "2026-11-05T16:45:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-04T04:15:00+00:00",
+      "candle_time": "2026-11-05T19:45:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
@@ -101,7 +101,7 @@
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-05T11:15:00+00:00",
+      "candle_time": "2026-11-05T19:30:00+00:00",
       "side": "LONG"
     },
     "XRPUSDT": {
@@ -160,7 +160,14 @@
     "9aeccae6e0c3",
     "29d68a5bf1cc",
     "05b6c99b7d47",
-    "aec41efee196"
+    "aec41efee196",
+    "f111c7e65064",
+    "7d992d821774",
+    "b707eb9dc8ae",
+    "ba895c0d0df9",
+    "f42f0e647c11",
+    "9804f474f417",
+    "14e29c4a2b13"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -271,7 +278,19 @@
     "07e20ac5c06e",
     "b6e4ef62f278",
     "31f0f0d5aa29",
-    "5cbee8a57402"
+    "5cbee8a57402",
+    "4407773ff41c",
+    "9309c665c664",
+    "3ec505060fbb",
+    "cf3dca4cc31a",
+    "3e269c1dcc28",
+    "f5bea66d638d",
+    "64329497c1f5",
+    "e4ac1efefd7d",
+    "a119696914f4",
+    "a170f868be92",
+    "3bc5d06c9463",
+    "119663c5b288"
   ],
   "tg_offset": null
 }

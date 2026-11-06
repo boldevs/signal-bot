@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-05T16:41:26.164927+00:00",
+    "checked_at": "2026-11-05T22:43:17.734132+00:00",
     "events": [
       {
         "currency": "USD",
@@ -61,7 +61,7 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-05T20:45:00+00:00",
+      "candle_time": "2026-11-06T01:15:00+00:00",
       "side": "SHORT"
     },
     "BNBUSDT": {
@@ -69,23 +69,23 @@
       "side": "LONG"
     },
     "BTCUSDT": {
-      "candle_time": "2026-11-04T21:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-06T03:00:00+00:00",
+      "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-05T20:45:00+00:00",
+      "candle_time": "2026-11-06T03:15:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-04T20:15:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-06T03:00:00+00:00",
+      "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-05T17:30:00+00:00",
+      "candle_time": "2026-11-05T23:15:00+00:00",
       "side": "LONG"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-05T16:45:00+00:00",
+      "candle_time": "2026-11-06T00:30:00+00:00",
       "side": "LONG"
     },
     "LINKUSDT": {
@@ -93,24 +93,24 @@
       "side": "SHORT"
     },
     "SOLUSDT": {
-      "candle_time": "2026-11-05T11:30:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-06T03:15:00+00:00",
+      "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-05T09:15:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-05T23:00:00+00:00",
+      "side": "SHORT"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-05T19:30:00+00:00",
+      "candle_time": "2026-11-06T00:00:00+00:00",
       "side": "LONG"
     },
     "XRPUSDT": {
-      "candle_time": "2026-11-03T19:15:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-06T00:45:00+00:00",
+      "side": "SHORT"
     }
   },
-  "last_fx_daily_date": "2026-11-05",
-  "last_summary_date": "2026-11-05",
+  "last_fx_daily_date": "2026-11-06",
+  "last_summary_date": "2026-11-06",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",
@@ -167,7 +167,11 @@
     "ba895c0d0df9",
     "f42f0e647c11",
     "9804f474f417",
-    "14e29c4a2b13"
+    "14e29c4a2b13",
+    "b69664a1abde",
+    "df5108ad3a5e",
+    "84b6654c6a0c",
+    "9de9003c8cbf"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -290,7 +294,11 @@
     "a119696914f4",
     "a170f868be92",
     "3bc5d06c9463",
-    "119663c5b288"
+    "119663c5b288",
+    "0c6d71b13439",
+    "2d9c5d6af368",
+    "74ee59375ab7",
+    "9d5383ac0d35"
   ],
   "tg_offset": null
 }

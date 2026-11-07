@@ -61,7 +61,7 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-07T13:45:00+00:00",
+      "candle_time": "2026-11-07T17:45:00+00:00",
       "side": "SHORT"
     },
     "BNBUSDT": {
@@ -69,11 +69,11 @@
       "side": "LONG"
     },
     "BTCUSDT": {
-      "candle_time": "2026-11-06T08:45:00+00:00",
+      "candle_time": "2026-11-07T18:15:00+00:00",
       "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-07T11:45:00+00:00",
+      "candle_time": "2026-11-07T17:15:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
@@ -105,7 +105,7 @@
       "side": "LONG"
     },
     "XRPUSDT": {
-      "candle_time": "2026-11-07T09:30:00+00:00",
+      "candle_time": "2026-11-07T18:15:00+00:00",
       "side": "SHORT"
     }
   },

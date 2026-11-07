@@ -110,7 +110,7 @@
     }
   },
   "last_fx_daily_date": "2026-11-06",
-  "last_summary_date": "2026-11-06",
+  "last_summary_date": "2026-11-07",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",
@@ -322,7 +322,8 @@
     "c4b8f5b11394",
     "d158c3d13213",
     "b6f6fb04b835",
-    "bd1f8157a0f5"
+    "bd1f8157a0f5",
+    "7102d91457dd"
   ],
   "tg_offset": null
 }

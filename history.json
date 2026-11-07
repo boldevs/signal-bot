@@ -9835,6 +9835,25 @@
       "symbol": "XAU/USD",
       "target": 4080.0547808779475,
       "tf": "15m"
+    },
+    {
+      "announced": true,
+      "call": "CAUTION",
+      "candle_time": "2026-11-07T08:00:00+00:00",
+      "closed_at": null,
+      "coin": "DOGE",
+      "entry": 0.07207,
+      "id": "DOGEUSDT-2026-11-07T08:00:00+00:00",
+      "move_1h": -0.07,
+      "move_2h": -0.11,
+      "result_r": null,
+      "side": "SHORT",
+      "skipped": "Claude",
+      "status": "OPEN",
+      "stop": 0.07221626057056803,
+      "symbol": "DOGEUSDT",
+      "target": 0.07185060914414795,
+      "tf": "15m"
     }
   ]
 }

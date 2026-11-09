@@ -1,63 +1,38 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-06T16:56:52.443973+00:00",
+    "checked_at": "2026-11-08T21:00:43.183191+00:00",
     "events": [
       {
         "currency": "USD",
-        "time": "2026-11-03T15:16:00+00:00",
-        "title": "Congressional Elections"
-      },
-      {
-        "currency": "GBP",
-        "time": "2026-11-05T12:00:00+00:00",
-        "title": "BOE Monetary Policy Report"
-      },
-      {
-        "currency": "GBP",
-        "time": "2026-11-05T12:00:00+00:00",
-        "title": "Monetary Policy Summary"
-      },
-      {
-        "currency": "GBP",
-        "time": "2026-11-05T12:00:00+00:00",
-        "title": "MPC Official Bank Rate Votes"
-      },
-      {
-        "currency": "GBP",
-        "time": "2026-11-05T12:00:00+00:00",
-        "title": "Official Bank Rate"
-      },
-      {
-        "currency": "GBP",
-        "time": "2026-11-05T12:30:00+00:00",
-        "title": "BOE Gov Bailey Speaks"
+        "time": "2026-11-10T13:30:00+00:00",
+        "title": "Core CPI m/m"
       },
       {
         "currency": "USD",
-        "time": "2026-11-06T13:30:00+00:00",
-        "title": "Average Hourly Earnings m/m"
+        "time": "2026-11-10T13:30:00+00:00",
+        "title": "CPI m/m"
+      },
+      {
+        "currency": "GBP",
+        "time": "2026-11-12T07:00:00+00:00",
+        "title": "GDP m/m"
       },
       {
         "currency": "USD",
-        "time": "2026-11-06T13:30:00+00:00",
-        "title": "Non-Farm Employment Change"
+        "time": "2026-11-13T13:30:00+00:00",
+        "title": "Core PPI m/m"
       },
       {
         "currency": "USD",
-        "time": "2026-11-06T13:30:00+00:00",
-        "title": "Unemployment Rate"
-      },
-      {
-        "currency": "JPY",
-        "time": "2026-11-06T16:00:00+00:00",
-        "title": "BOJ Gov Ueda Speaks"
+        "time": "2026-11-13T13:30:00+00:00",
+        "title": "PPI m/m"
       }
     ],
     "ok": true
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-11-07T22:45:00+00:00",
+      "candle_time": "2026-11-09T01:00:00+00:00",
       "side": "SHORT"
     },
     "AVAXUSDT": {
@@ -69,7 +44,7 @@
       "side": "LONG"
     },
     "BTCUSDT": {
-      "candle_time": "2026-11-07T18:15:00+00:00",
+      "candle_time": "2026-11-09T01:00:00+00:00",
       "side": "SHORT"
     },
     "DOGEUSDT": {
@@ -81,15 +56,15 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-06T19:45:00+00:00",
+      "candle_time": "2026-11-08T21:15:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-06T19:45:00+00:00",
+      "candle_time": "2026-11-08T22:45:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-06T08:45:00+00:00",
+      "candle_time": "2026-11-09T01:00:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
@@ -97,11 +72,11 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-06T19:30:00+00:00",
+      "candle_time": "2026-11-08T22:45:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-06T21:30:00+00:00",
+      "candle_time": "2026-11-09T00:00:00+00:00",
       "side": "LONG"
     },
     "XRPUSDT": {
@@ -109,8 +84,8 @@
       "side": "SHORT"
     }
   },
-  "last_fx_daily_date": "2026-11-06",
-  "last_summary_date": "2026-11-08",
+  "last_fx_daily_date": "2026-11-09",
+  "last_summary_date": "2026-11-09",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",

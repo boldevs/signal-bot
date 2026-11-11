@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-10T23:44:40.505858+00:00",
+    "checked_at": "2026-11-11T05:46:14.065330+00:00",
     "events": [
       {
         "currency": "USD",
@@ -56,11 +56,11 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-11T03:15:00+00:00",
+      "candle_time": "2026-11-11T06:00:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-11T03:30:00+00:00",
+      "candle_time": "2026-11-11T07:15:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
@@ -72,7 +72,7 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-11T03:00:00+00:00",
+      "candle_time": "2026-11-11T09:45:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
@@ -162,7 +162,8 @@
     "e080d58d1f9f",
     "fc8c9ce68ef6",
     "022010d87552",
-    "52da833b775d"
+    "52da833b775d",
+    "d8825b7a2080"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -339,7 +340,8 @@
     "f456aef88772",
     "b5ceac965c1e",
     "fe1b410cb27d",
-    "7efc3f50a729"
+    "7efc3f50a729",
+    "8ad74f4d58f2"
   ],
   "tg_offset": null
 }

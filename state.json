@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-11T23:54:04.972701+00:00",
+    "checked_at": "2026-11-12T05:55:56.546263+00:00",
     "events": [
       {
         "currency": "USD",
@@ -32,7 +32,7 @@
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-11-10T21:15:00+00:00",
+      "candle_time": "2026-11-12T09:00:00+00:00",
       "side": "SHORT"
     },
     "AVAXUSDT": {
@@ -56,15 +56,17 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-12T02:00:00+00:00",
+      "candle_time": "2026-11-12T06:00:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-12T02:00:00+00:00",
+      "candle_time": "2026-11-12T06:45:00+00:00",
+      "msg_id": 418,
+      "sent_at": "2026-11-12T07:03:44.658206+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-10T18:45:00+00:00",
+      "candle_time": "2026-11-12T08:00:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
@@ -72,11 +74,11 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-12T03:45:00+00:00",
+      "candle_time": "2026-11-12T07:15:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-12T04:15:00+00:00",
+      "candle_time": "2026-11-12T07:15:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
@@ -165,7 +167,8 @@
     "52da833b775d",
     "d8825b7a2080",
     "80f242af8cdc",
-    "0bfe2e58dce9"
+    "0bfe2e58dce9",
+    "e508921ba6b6"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -345,7 +348,8 @@
     "7efc3f50a729",
     "8ad74f4d58f2",
     "e0f927991df0",
-    "35738898241c"
+    "35738898241c",
+    "9eaa2a5dfb37"
   ],
   "tg_offset": null
 }

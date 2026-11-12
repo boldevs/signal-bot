@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-12T05:55:56.546263+00:00",
+    "checked_at": "2026-11-12T12:17:45.418029+00:00",
     "events": [
       {
         "currency": "USD",
@@ -32,7 +32,7 @@
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-11-12T09:00:00+00:00",
+      "candle_time": "2026-11-12T17:30:00+00:00",
       "side": "SHORT"
     },
     "AVAXUSDT": {
@@ -40,7 +40,7 @@
       "side": "LONG"
     },
     "BNBUSDT": {
-      "candle_time": "2026-11-09T09:00:00+00:00",
+      "candle_time": "2026-11-12T16:30:00+00:00",
       "side": "SHORT"
     },
     "BTCUSDT": {
@@ -48,37 +48,37 @@
       "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-10T20:30:00+00:00",
+      "candle_time": "2026-11-12T17:30:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-10T19:00:00+00:00",
+      "candle_time": "2026-11-12T17:30:00+00:00",
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-12T06:00:00+00:00",
+      "candle_time": "2026-11-12T14:30:00+00:00",
+      "msg_id": 422,
+      "sent_at": "2026-11-12T14:48:57.740530+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-12T06:45:00+00:00",
-      "msg_id": 418,
-      "sent_at": "2026-11-12T07:03:44.658206+00:00",
+      "candle_time": "2026-11-12T14:30:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-12T08:00:00+00:00",
+      "candle_time": "2026-11-12T17:30:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
-      "candle_time": "2026-11-10T18:45:00+00:00",
+      "candle_time": "2026-11-12T17:30:00+00:00",
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-12T07:15:00+00:00",
+      "candle_time": "2026-11-12T15:00:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-12T07:15:00+00:00",
+      "candle_time": "2026-11-12T12:30:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
@@ -168,7 +168,14 @@
     "d8825b7a2080",
     "80f242af8cdc",
     "0bfe2e58dce9",
-    "e508921ba6b6"
+    "e508921ba6b6",
+    "bc55b3191939",
+    "89622350858d",
+    "80d156afb3d0",
+    "5940df0fbde2",
+    "f2cea4c260ed",
+    "2bff287cbfec",
+    "130c1c66ffb0"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -349,7 +356,12 @@
     "8ad74f4d58f2",
     "e0f927991df0",
     "35738898241c",
-    "9eaa2a5dfb37"
+    "9eaa2a5dfb37",
+    "7f314f556718",
+    "c049fdf018ea",
+    "21bb73e11749",
+    "d33e128323de",
+    "6e450672620a"
   ],
   "tg_offset": null
 }

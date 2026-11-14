@@ -36,15 +36,15 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-09T20:00:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-14T06:30:00+00:00",
+      "side": "SHORT"
     },
     "BNBUSDT": {
       "candle_time": "2026-11-14T01:45:00+00:00",
       "side": "SHORT"
     },
     "BTCUSDT": {
-      "candle_time": "2026-11-12T00:30:00+00:00",
+      "candle_time": "2026-11-14T07:15:00+00:00",
       "side": "SHORT"
     },
     "DOGEUSDT": {
@@ -52,7 +52,7 @@
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-13T12:15:00+00:00",
+      "candle_time": "2026-11-14T06:30:00+00:00",
       "side": "SHORT"
     },
     "EUR/USD:15m": {
@@ -64,7 +64,7 @@
       "side": "SHORT"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-14T00:15:00+00:00",
+      "candle_time": "2026-11-14T06:15:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
@@ -180,7 +180,8 @@
     "87593929b8fe",
     "f1d75007340a",
     "938db3726b97",
-    "1a079f344d2b"
+    "1a079f344d2b",
+    "41af5d909d4e"
   ],
   "seen_macro": [
     "32b30b97224b",
@@ -378,7 +379,8 @@
     "ee9af28e575b",
     "d54aabbfea5d",
     "7a0859f8dd19",
-    "503aa2a2a911"
+    "503aa2a2a911",
+    "713633fc8874"
   ],
   "tg_offset": null
 }

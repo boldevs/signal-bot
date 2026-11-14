@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-13T15:37:12.147638+00:00",
+    "checked_at": "2026-11-13T21:41:07.617660+00:00",
     "events": [
       {
         "currency": "USD",
@@ -40,7 +40,7 @@
       "side": "LONG"
     },
     "BNBUSDT": {
-      "candle_time": "2026-11-12T21:45:00+00:00",
+      "candle_time": "2026-11-14T01:45:00+00:00",
       "side": "SHORT"
     },
     "BTCUSDT": {
@@ -48,7 +48,7 @@
       "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-13T07:45:00+00:00",
+      "candle_time": "2026-11-14T00:45:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
@@ -60,11 +60,11 @@
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-13T17:15:00+00:00",
+      "candle_time": "2026-11-13T21:30:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-12T17:30:00+00:00",
+      "candle_time": "2026-11-14T00:15:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
@@ -85,7 +85,7 @@
     }
   },
   "last_fx_daily_date": "2026-11-13",
-  "last_summary_date": "2026-11-13",
+  "last_summary_date": "2026-11-14",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",
@@ -377,7 +377,8 @@
     "a45a57e55c43",
     "ee9af28e575b",
     "d54aabbfea5d",
-    "7a0859f8dd19"
+    "7a0859f8dd19",
+    "503aa2a2a911"
   ],
   "tg_offset": null
 }

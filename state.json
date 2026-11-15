@@ -36,7 +36,7 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-14T12:30:00+00:00",
+      "candle_time": "2026-11-15T05:45:00+00:00",
       "side": "SHORT"
     },
     "BNBUSDT": {
@@ -183,7 +183,9 @@
     "1a079f344d2b",
     "41af5d909d4e",
     "17387543e6a9",
-    "28e48cfb1b70"
+    "28e48cfb1b70",
+    "fd281482b7b6",
+    "d9f0e246eb2b"
   ],
   "seen_macro": [
     "32b30b97224b",

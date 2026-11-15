@@ -1,31 +1,41 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-13T21:41:07.617660+00:00",
+    "checked_at": "2026-11-15T21:02:11.174445+00:00",
     "events": [
       {
         "currency": "USD",
-        "time": "2026-11-10T13:30:00+00:00",
-        "title": "Core CPI m/m"
+        "time": "2026-11-16T17:00:00+00:00",
+        "title": "Fed Chairman Warsh Speaks"
       },
       {
         "currency": "USD",
-        "time": "2026-11-10T13:30:00+00:00",
-        "title": "CPI m/m"
+        "time": "2026-11-17T13:30:00+00:00",
+        "title": "Core Retail Sales m/m"
+      },
+      {
+        "currency": "USD",
+        "time": "2026-11-17T13:30:00+00:00",
+        "title": "Retail Sales m/m"
       },
       {
         "currency": "GBP",
-        "time": "2026-11-12T07:00:00+00:00",
-        "title": "GDP m/m"
+        "time": "2026-11-18T07:00:00+00:00",
+        "title": "CPI y/y"
+      },
+      {
+        "currency": "GBP",
+        "time": "2026-11-18T07:30:00+00:00",
+        "title": "BOE Gov Bailey Speaks"
+      },
+      {
+        "currency": "GBP",
+        "time": "2026-11-18T15:00:00+00:00",
+        "title": "BOE Gov Bailey Speaks"
       },
       {
         "currency": "USD",
-        "time": "2026-11-13T13:30:00+00:00",
-        "title": "Core PPI m/m"
-      },
-      {
-        "currency": "USD",
-        "time": "2026-11-13T13:30:00+00:00",
-        "title": "PPI m/m"
+        "time": "2026-11-18T19:00:00+00:00",
+        "title": "FOMC Meeting Minutes"
       }
     ],
     "ok": true
@@ -56,11 +66,11 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-13T19:30:00+00:00",
+      "candle_time": "2026-11-15T23:00:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-13T21:30:00+00:00",
+      "candle_time": "2026-11-15T23:00:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
@@ -72,7 +82,7 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-13T20:30:00+00:00",
+      "candle_time": "2026-11-15T22:45:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
@@ -84,7 +94,7 @@
       "side": "SHORT"
     }
   },
-  "last_fx_daily_date": "2026-11-13",
+  "last_fx_daily_date": "2026-11-16",
   "last_summary_date": "2026-11-15",
   "seen_events": [
     "923e9984078f",
@@ -185,7 +195,9 @@
     "17387543e6a9",
     "28e48cfb1b70",
     "fd281482b7b6",
-    "d9f0e246eb2b"
+    "d9f0e246eb2b",
+    "fc3a82a45969",
+    "fe8aff623860"
   ],
   "seen_macro": [
     "32b30b97224b",

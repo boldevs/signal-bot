@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-19T05:09:42.697781+00:00",
+    "checked_at": "2026-11-19T12:53:26.587056+00:00",
     "events": [
       {
         "currency": "USD",
@@ -41,7 +41,7 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-18T19:00:00+00:00",
+      "candle_time": "2026-11-19T16:00:00+00:00",
       "side": "SHORT"
     },
     "BNBUSDT": {
@@ -49,7 +49,7 @@
       "side": "SHORT"
     },
     "BTCUSDT": {
-      "candle_time": "2026-11-19T00:00:00+00:00",
+      "candle_time": "2026-11-19T16:15:00+00:00",
       "side": "SHORT"
     },
     "DOGEUSDT": {
@@ -61,15 +61,15 @@
       "side": "SHORT"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-19T05:15:00+00:00",
+      "candle_time": "2026-11-19T15:15:00+00:00",
       "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-19T09:45:00+00:00",
+      "candle_time": "2026-11-19T14:30:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-18T17:45:00+00:00",
+      "candle_time": "2026-11-19T16:00:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
@@ -77,16 +77,16 @@
       "side": "LONG"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-19T06:30:00+00:00",
+      "candle_time": "2026-11-19T17:45:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-19T09:45:00+00:00",
+      "candle_time": "2026-11-19T14:45:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
-      "candle_time": "2026-11-17T17:45:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-19T12:45:00+00:00",
+      "side": "LONG"
     }
   },
   "last_fx_daily_date": "2026-11-19",
@@ -442,7 +442,10 @@
     "7812c4c5cd65",
     "3b070152d3c0",
     "7288907a276e",
-    "448e3c6df04c"
+    "448e3c6df04c",
+    "70b66369d634",
+    "f6996d848995",
+    "3d52bc4bfeea"
   ],
   "tg_offset": null
 }

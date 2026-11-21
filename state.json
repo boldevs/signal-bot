@@ -45,7 +45,7 @@
       "side": "SHORT"
     },
     "BNBUSDT": {
-      "candle_time": "2026-11-20T23:15:00+00:00",
+      "candle_time": "2026-11-21T01:15:00+00:00",
       "side": "SHORT"
     },
     "BTCUSDT": {
@@ -57,7 +57,7 @@
       "side": "SHORT"
     },
     "ETHUSDT": {
-      "candle_time": "2026-11-20T23:15:00+00:00",
+      "candle_time": "2026-11-21T02:15:00+00:00",
       "side": "SHORT"
     },
     "EUR/USD:15m": {
@@ -90,7 +90,7 @@
     }
   },
   "last_fx_daily_date": "2026-11-20",
-  "last_summary_date": "2026-11-20",
+  "last_summary_date": "2026-11-21",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",

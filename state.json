@@ -37,15 +37,15 @@
   },
   "last_alert": {
     "ADAUSDT": {
-      "candle_time": "2026-11-19T00:00:00+00:00",
+      "candle_time": "2026-11-21T08:15:00+00:00",
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-19T16:00:00+00:00",
+      "candle_time": "2026-11-21T08:15:00+00:00",
       "side": "SHORT"
     },
     "BNBUSDT": {
-      "candle_time": "2026-11-21T01:15:00+00:00",
+      "candle_time": "2026-11-21T08:00:00+00:00",
       "side": "SHORT"
     },
     "BTCUSDT": {
@@ -53,7 +53,7 @@
       "side": "SHORT"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-19T22:45:00+00:00",
+      "candle_time": "2026-11-21T08:00:00+00:00",
       "side": "SHORT"
     },
     "ETHUSDT": {
@@ -69,11 +69,11 @@
       "side": "SHORT"
     },
     "LINKUSDT": {
-      "candle_time": "2026-11-19T16:00:00+00:00",
+      "candle_time": "2026-11-21T08:15:00+00:00",
       "side": "SHORT"
     },
     "SOLUSDT": {
-      "candle_time": "2026-11-20T14:30:00+00:00",
+      "candle_time": "2026-11-21T08:15:00+00:00",
       "side": "SHORT"
     },
     "USD/JPY:15m": {
@@ -85,8 +85,8 @@
       "side": "SHORT"
     },
     "XRPUSDT": {
-      "candle_time": "2026-11-19T12:45:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-21T08:15:00+00:00",
+      "side": "SHORT"
     }
   },
   "last_fx_daily_date": "2026-11-20",
@@ -469,7 +469,8 @@
     "dd20cdde5cd5",
     "33c50a3d8bbe",
     "248bd4656cfd",
-    "2271ab13f42b"
+    "2271ab13f42b",
+    "3078626f6d41"
   ],
   "tg_offset": null
 }

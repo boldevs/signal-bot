@@ -1,6 +1,6 @@
 {
   "fx_calendar": {
-    "checked_at": "2026-11-25T19:09:10.562930+00:00",
+    "checked_at": "2026-11-26T02:09:39.124898+00:00",
     "events": [
       {
         "currency": "USD",
@@ -21,8 +21,8 @@
       "side": "SHORT"
     },
     "AVAXUSDT": {
-      "candle_time": "2026-11-25T04:15:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-26T06:15:00+00:00",
+      "side": "LONG"
     },
     "BNBUSDT": {
       "candle_time": "2026-11-22T20:45:00+00:00",
@@ -33,19 +33,19 @@
       "side": "LONG"
     },
     "DOGEUSDT": {
-      "candle_time": "2026-11-21T08:00:00+00:00",
-      "side": "SHORT"
+      "candle_time": "2026-11-26T07:00:00+00:00",
+      "side": "LONG"
     },
     "ETHUSDT": {
       "candle_time": "2026-11-23T06:30:00+00:00",
       "side": "LONG"
     },
     "EUR/USD:15m": {
-      "candle_time": "2026-11-25T23:15:00+00:00",
-      "side": "LONG"
+      "candle_time": "2026-11-26T06:30:00+00:00",
+      "side": "SHORT"
     },
     "GBP/USD:15m": {
-      "candle_time": "2026-11-26T00:15:00+00:00",
+      "candle_time": "2026-11-26T06:15:00+00:00",
       "side": "SHORT"
     },
     "LINKUSDT": {
@@ -57,11 +57,11 @@
       "side": "SHORT"
     },
     "USD/JPY:15m": {
-      "candle_time": "2026-11-25T23:30:00+00:00",
+      "candle_time": "2026-11-26T07:15:00+00:00",
       "side": "LONG"
     },
     "XAU/USD:15m": {
-      "candle_time": "2026-11-25T11:15:00+00:00",
+      "candle_time": "2026-11-26T05:45:00+00:00",
       "side": "SHORT"
     },
     "XRPUSDT": {
@@ -70,7 +70,7 @@
     }
   },
   "last_fx_daily_date": "2026-11-26",
-  "last_summary_date": "2026-11-25",
+  "last_summary_date": "2026-11-26",
   "seen_events": [
     "923e9984078f",
     "c93d41de1ccb",
@@ -217,7 +217,6 @@
     "032111e0fd54"
   ],
   "seen_macro": [
-    "32b30b97224b",
     "4d4753fe78ff",
     "08a73fe544ff",
     "9692386902c5",
@@ -513,7 +512,11 @@
     "3b59cfbe5f45",
     "057687d2029e",
     "2d5ebd2fea1f",
-    "751d2680ceae"
+    "751d2680ceae",
+    "e7c23b3daec7",
+    "b6707b656b42",
+    "8b722d8ab40f",
+    "c4c2b981ca02"
   ],
   "tg_offset": null
 }
